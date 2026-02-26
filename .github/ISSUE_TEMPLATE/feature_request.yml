@@ -1,0 +1,59 @@
+name: 💡 Feature Request
+description: Tem uma ideia para melhorar o tutorial ou o projeto? Compartilhe!
+title: "[FEAT] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Todo cowboy tem uma boa ideia. Conta pra gente! 🤠
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Qual problema essa ideia resolve?
+      description: Descreva a situação ou dificuldade que motivou essa sugestão.
+      placeholder: "Sinto falta de um exemplo que mostra como..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Qual é a sua ideia?
+      description: Descreva a feature ou melhoria que você gostaria de ver.
+      placeholder: "Seria ótimo se houvesse um prompt que..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área do projeto
+      description: Em qual parte do projeto essa ideia se encaixa?
+      options:
+        - Tutorial / Documentação
+        - Código COBOL
+        - Prompts do Copilot
+        - Agents (Planner, Coder, Reviewer)
+        - Skills
+        - Custom Instructions
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Há outras formas de resolver o mesmo problema?
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Qualquer outra informação, exemplos ou referências que possam ajudar.
+    validations:
+      required: false

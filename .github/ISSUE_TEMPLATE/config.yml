@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Leia o Tutorial
+    url: https://github.com/seu-usuario/cowboy/blob/main/docs/TUTORIAL.md
+    about: Comece por aqui antes de abrir uma issue.
+  - name: 🤠 Sobre Vibe Coding
+    url: https://opensource.guide/
+    about: Aprenda mais sobre open source e boas práticas.

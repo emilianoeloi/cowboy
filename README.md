@@ -1,127 +1,217 @@
-# Calculadora COBOL 🖥️
+<div align="center">
 
-## Tutorial Completo de GitHub Copilot Agent Mode
+# 🤠 cowboy
 
-Este projeto ensina Agent Mode do zero.
-Você vai criar uma calculadora de soma.
-Em COBOL.
-A linguagem que roda o mundo financeiro.
+### *"Vibe Coding é programar sem entender o código"*
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![GnuCOBOL](https://img.shields.io/badge/COBOL-GnuCOBOL-blue)](https://gnucobol.sourceforge.io/)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub-Copilot%20Agent%20Mode-8A2BE2)](https://github.com/features/copilot)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-## Por Que COBOL?
+<br />
 
-COBOL é histórico.
-Criado em 1959.
-Ainda roda 95% das transações ATM.
-Ainda processa 80% das transações financeiras.
+> Aprenda **GitHub Copilot Agent Mode** do jeito mais selvagem:  
+> deixando a IA escrever COBOL enquanto você só faz perguntas.
 
-Aprender COBOL é entender as raízes.
-E o Agent Mode funciona com qualquer linguagem.
-Até as mais antigas.
+</div>
 
 ---
 
-## O Que Você Vai Aprender
+## O que é isso? 🤔
 
-Este tutorial cobre tudo.
-Skills.
-Agents.
-Prompts.
-Custom Instructions.
+**cowboy** é um tutorial hands-on de **GitHub Copilot Agent Mode**.
 
-Tudo aplicado ao COBOL.
-Uma linguagem que você talvez nunca usou.
-Mas que o Copilot conhece bem.
+A ideia é simples e radical:
+
+> Você não precisa saber COBOL.  
+> Você não precisa entender o código.  
+> Você só precisa viver a experiência.
+
+Usamos COBOL exatamente por isso. Uma linguagem de 1959, verbosa e estranha. Se o Agent Mode consegue escrever COBOL perfeito, ele consegue fazer qualquer coisa na sua stack favorita.
 
 ---
 
-## Estrutura do Projeto
+## Por que "Vibe Coding"? 🎸
+
+**Vibe Coding** é o nome que o mundo deu para uma nova forma de programar:
+
+- Você descreve o que quer em linguagem natural
+- A IA escreve o código
+- Você testa, itera e refina
+- O código funciona — mesmo que você não entenda cada linha
+
+Não é "código ruim". É **colaboração com IA**. É o futuro chegando agora.
+
+Este repositório é uma sandbox para explorar esse conceito de forma honesta e prática.
+
+---
+
+## O que você vai aprender 🎯
+
+| Tópico | Descrição |
+|--------|-----------|
+| 🤖 **Agent Mode** | Como ativar e usar o modo agente do Copilot |
+| 📋 **Custom Instructions** | Como ensinar o Copilot sobre o seu projeto |
+| 🧠 **Skills** | Como criar skills reutilizáveis para domínios específicos |
+| 👥 **Agents** | Como criar agentes especializados (Planner, Coder, Reviewer) |
+| 💬 **Prompts** | Como criar prompts reutilizáveis para tarefas recorrentes |
+| 🖥️ **COBOL** | O básico de COBOL — de brinde |
+
+---
+
+## Demo rápida ⚡
 
 ```
-calculadora-cobol/
-├── README.md                           ← Você está aqui
-├── AGENTS.md                           ← Instruções globais para o agente
-├── TUTORIAL.md                         ← Tutorial passo a passo
-├── LEITURA_VOZ_ALTA.md                 ← Otimizado para leitura em voz alta
-├── .github/
-│   ├── copilot-instructions.md         ← Instruções do Copilot
-│   ├── agents/
-│   │   ├── cobol-planner.agent.md      ← Agente que planeja
-│   │   ├── cobol-coder.agent.md        ← Agente que implementa
-│   │   └── cobol-reviewer.agent.md     ← Agente que revisa
-│   ├── skills/
-│   │   └── cobol-calculadora/
-│   │       └── SKILL.md                ← Skill de COBOL
-│   └── prompts/
-│       ├── criar-programa.prompt.md    ← Prompt para criar programa
-│       ├── implementar-soma.prompt.md  ← Prompt para implementar soma
-│       └── testar-programa.prompt.md   ← Prompt para testar
-└── .vscode/
-    └── settings.json                   ← Configurações do VS Code
+========================================
+       CALCULADORA COBOL
+       Soma de Dois Numeros
+========================================
+
+Digite o primeiro numero (0-99999): 
+42
+Digite o segundo numero (0-99999): 
+58
+
+========================================
+RESULTADO DA SOMA
+========================================
+00042 + 00058 = 000100
 ```
+
+> Esse código foi escrito pelo GitHub Copilot Agent Mode.  
+> Nenhum humano digitou COBOL neste projeto.
 
 ---
 
-## Pré-requisitos
+## Pré-requisitos 🛠️
 
-Para compilar COBOL, você precisa de um compilador.
-O mais comum é o GnuCOBOL.
+- [VS Code](https://code.visualstudio.com/) com a extensão [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+- [GnuCOBOL](https://gnucobol.sourceforge.io/) para compilar o programa
 
-### Instalação no macOS
+### Instalar GnuCOBOL
+
 ```bash
+# macOS
 brew install gnucobol
-```
 
-### Instalação no Ubuntu/Debian
-```bash
+# Ubuntu/Debian
 sudo apt-get install gnucobol
-```
 
-### Verificar instalação
-```bash
+# Verificar instalação
 cobc --version
 ```
 
 ---
 
-## Como Usar Este Tutorial
+## Instalação e uso 🚀
 
-### Passo 1: Abra no VS Code
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/cowboy.git
+cd cowboy
 
-Abra esta pasta no VS Code.
-Certifique-se de ter o GitHub Copilot instalado.
+# 2. Abra no VS Code
+code .
 
-### Passo 2: Mude para Agent Mode
+# 3. Ative o Agent Mode no Copilot Chat
+# Clique no dropdown "Ask" → selecione "Agent"
 
-Abra o Copilot Chat.
-Clique no dropdown "Ask".
-Mude para "Agent".
+# 4. Compile o programa COBOL
+cobc -x -o calculadora src/CALCULADORA.cbl
 
-### Passo 3: Use os Prompts
-
-Na pasta .github/prompts você encontra prompts prontos.
-Execute na ordem:
-1. criar-programa.prompt.md
-2. implementar-soma.prompt.md
-3. testar-programa.prompt.md
-
-### Passo 4: Observe e Aprenda
-
-Observe o agente criar código COBOL.
-Uma linguagem de 1959.
-Funcionando com IA de 2026.
-Incrível, não é?
+# 5. Execute
+./calculadora
+```
 
 ---
 
-## Resultado Esperado
+## Estrutura do projeto 📁
 
-Ao final você terá:
+```
+cowboy/
+├── README.md                           ← Você está aqui
+├── AGENTS.md                           ← Instruções globais para agentes
+├── LICENSE                             ← Licença MIT
+├── CONTRIBUTING.md                     ← Como contribuir
+├── SECURITY.md                         ← Política de segurança
+├── CODE_OF_CONDUCT.md                  ← Código de conduta
+├── src/
+│   └── CALCULADORA.cbl                 ← Programa COBOL
+├── docs/
+│   ├── TUTORIAL.md                     ← Tutorial passo a passo
+│   └── LEITURA_VOZ_ALTA.md             ← Versão para leitura em voz alta
+└── .github/
+    ├── copilot-instructions.md         ← Instruções do Copilot
+    ├── agents/
+    │   ├── cobol-planner.agent.md      ← Agente planejador
+    │   ├── cobol-coder.agent.md        ← Agente programador
+    │   └── cobol-reviewer.agent.md     ← Agente revisor
+    ├── skills/
+    │   └── cobol-calculadora/
+    │       └── SKILL.md                ← Skill de COBOL
+    ├── prompts/
+    │   ├── criar-programa.prompt.md    ← Prompt: criar programa
+    │   ├── implementar-soma.prompt.md  ← Prompt: implementar soma
+    │   └── testar-programa.prompt.md   ← Prompt: testar
+    └── ISSUE_TEMPLATE/
+        ├── bug_report.yml
+        └── feature_request.yml
+```
 
-- Um programa COBOL funcional
-- Que soma dois números
-- Compilado com GnuCOBOL
-- E muito conhecimento sobre Agent Mode!
+---
 
-Vamos começar! 🖥️
+## Como usar o tutorial 📖
+
+### Passo 1 — Prepare o ambiente
+
+Clone o repositório e abra no VS Code com o Copilot instalado.
+
+### Passo 2 — Ative o Agent Mode
+
+No Copilot Chat, mude de "Ask" para "Agent".  
+O Copilot vai ler automaticamente o `AGENTS.md` e as instruções em `.github/`.
+
+### Passo 3 — Execute os prompts na ordem
+
+```
+.github/prompts/criar-programa.prompt.md
+.github/prompts/implementar-soma.prompt.md
+.github/prompts/testar-programa.prompt.md
+```
+
+### Passo 4 — Observe e aprenda
+
+Veja o agente criar, compilar e executar código COBOL.  
+Uma linguagem de 1959. Funcionando com IA de 2026.
+
+---
+
+## Contribuindo 🤝
+
+Contribuições são bem-vindas! Consulte o [CONTRIBUTING.md](./CONTRIBUTING.md) para saber como.
+
+Tem uma ideia para melhorar o tutorial? [Abra uma issue](../../issues/new/choose).
+
+---
+
+## Código de Conduta 📜
+
+Este projeto adota o [Contributor Covenant](./CODE_OF_CONDUCT.md).  
+Seja gentil. Seja inclusivo. Vibe together.
+
+---
+
+## Licença 📄
+
+MIT © [cowboy contributors](./LICENSE)
+
+---
+
+<div align="center">
+
+**Feito com 🤠 e GitHub Copilot Agent Mode**
+
+*Nenhuma linha de COBOL foi digitada manualmente neste projeto.*
+
+</div>

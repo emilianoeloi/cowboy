@@ -1,0 +1,26 @@
+name: ❓ Dúvida / Pergunta
+description: Ficou com alguma dúvida sobre o projeto ou sobre Vibe Coding?
+title: "[QUESTION] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Não existe pergunta boba. Pergunte, cowboy! 🤠
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Qual é a sua dúvida?
+      description: Descreva o que você quer saber.
+      placeholder: "Como faço para..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: O que você já tentou?
+      description: Descreva o que você já pesquisou ou experimentou.
+    validations:
+      required: false

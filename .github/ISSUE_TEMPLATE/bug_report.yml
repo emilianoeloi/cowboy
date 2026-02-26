@@ -1,0 +1,76 @@
+name: 🐛 Bug Report
+description: Encontrou algo que não funciona? Reporte aqui.
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar! Preencha o formulário abaixo para nos ajudar a entender o problema. 🤠
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do bug
+      description: Descreva o que aconteceu de forma clara e objetiva.
+      placeholder: "Quando executo o programa, aparece o erro X..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      description: Como podemos reproduzir o problema?
+      placeholder: |
+        1. Clone o repositório
+        2. Execute `cobc -x -o calculadora src/CALCULADORA.cbl`
+        3. Execute `./calculadora`
+        4. Veja o erro...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+      description: O que você esperava que acontecesse?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamento encontrado
+      description: O que realmente aconteceu? Inclua mensagens de erro se houver.
+    validations:
+      required: true
+
+  - type: input
+    id: gnucobol-version
+    attributes:
+      label: Versão do GnuCOBOL
+      description: Execute `cobc --version` e cole o resultado aqui.
+      placeholder: "GnuCOBOL 3.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Sistema Operacional
+      options:
+        - macOS
+        - Ubuntu/Debian
+        - Windows (WSL)
+        - Outro
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Qualquer outra informação que possa ser útil.
+    validations:
+      required: false

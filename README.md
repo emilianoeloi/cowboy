@@ -4,6 +4,8 @@
 
 ### *"Vibe Coding é programar sem entender o código"*
 
+🇧🇷 Português | [🇺🇸 English](./README-en.md) | [🇨🇳 中文](./README-zh.md)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![GnuCOBOL](https://img.shields.io/badge/COBOL-GnuCOBOL-blue)](https://gnucobol.sourceforge.io/)
 [![GitHub Copilot](https://img.shields.io/badge/GitHub-Copilot%20Agent%20Mode-8A2BE2)](https://github.com/features/copilot)

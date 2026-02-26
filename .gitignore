@@ -1,0 +1,56 @@
+# ==============================================
+# .gitignore - Projeto Calculadora COBOL
+# ==============================================
+
+# ----------------------------
+# Binários compilados (GnuCOBOL)
+# ----------------------------
+calculadora
+*.exe
+*.o
+*.so
+*.dylib
+
+# Arquivos intermediários do GnuCOBOL
+*.c
+*.lst
+*.cob.c
+
+# ----------------------------
+# macOS
+# ----------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ----------------------------
+# Editores e IDEs
+# ----------------------------
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+# ----------------------------
+# Logs e temporários
+# ----------------------------
+*.log
+*.tmp
+*.bak
+core
+core.*

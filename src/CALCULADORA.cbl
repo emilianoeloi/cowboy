@@ -28,7 +28,7 @@
        01 WS-RESULTADO         PIC S9(6) VALUE ZEROS.
 
       * Resultado formatado para display (exibe sinal negativo)
-       01 WS-RESULTADO-DISPLAY PIC -(5)9.
+       01 WS-RESULTADO-DISPLAY PIC -(6)9.
 
       * Linha decorativa
        01 WS-LINHA             PIC X(40) VALUE ALL "=".

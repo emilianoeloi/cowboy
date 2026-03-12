@@ -21,11 +21,14 @@
        01 WS-NUMERO-1          PIC 9(5) VALUE ZEROS.
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
 
-      * Resultado
-       01 WS-RESULTADO         PIC 9(6) VALUE ZEROS.
+      * Operação escolhida (1=Soma, 2=Subtração)
+       01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
 
-      * Resultado formatado para display
-       01 WS-RESULTADO-DISPLAY PIC Z(5)9.
+      * Resultado com sinal para suportar negativos
+       01 WS-RESULTADO         PIC S9(6) VALUE ZEROS.
+
+      * Resultado formatado para display (exibe sinal negativo)
+       01 WS-RESULTADO-DISPLAY PIC -(5)9.
 
       * Linha decorativa
        01 WS-LINHA             PIC X(40) VALUE ALL "=".
@@ -37,8 +40,16 @@
       ******************************************************************
        INICIO.
            PERFORM EXIBIR-CABECALHO.
+           PERFORM EXIBIR-MENU.
            PERFORM LER-NUMEROS.
-           PERFORM CALCULAR-SOMA.
+           IF WS-OPERACAO = 1
+               PERFORM CALCULAR-SOMA
+           ELSE IF WS-OPERACAO = 2
+               PERFORM CALCULAR-SUBTRACAO
+           ELSE
+               DISPLAY "Opcao invalida! Encerrando."
+               STOP RUN
+           END-IF.
            PERFORM EXIBIR-RESULTADO.
            STOP RUN.
 
@@ -48,8 +59,20 @@
        EXIBIR-CABECALHO.
            DISPLAY WS-LINHA.
            DISPLAY "       CALCULADORA COBOL".
-           DISPLAY "       Soma de Dois Numeros".
+           DISPLAY "       Soma e Subtracao".
            DISPLAY WS-LINHA.
+
+      ******************************************************************
+      * EXIBIR-MENU - Solicita a operação desejada
+      ******************************************************************
+       EXIBIR-MENU.
+           DISPLAY " ".
+           DISPLAY "Escolha a operacao:".
+           DISPLAY "  1 - Soma".
+           DISPLAY "  2 - Subtracao".
+           DISPLAY " ".
+           DISPLAY "Digite sua opcao (1 ou 2): ".
+           ACCEPT WS-OPERACAO.
 
       ******************************************************************
       * LER-NUMEROS - Solicita os números ao usuário
@@ -70,15 +93,32 @@
            MOVE WS-RESULTADO TO WS-RESULTADO-DISPLAY.
 
       ******************************************************************
+      * CALCULAR-SUBTRACAO - Realiza a operação de subtração
+      ******************************************************************
+       CALCULAR-SUBTRACAO.
+           SUBTRACT WS-NUMERO-2 FROM WS-NUMERO-1
+               GIVING WS-RESULTADO.
+           MOVE WS-RESULTADO TO WS-RESULTADO-DISPLAY.
+
+      ******************************************************************
       * EXIBIR-RESULTADO - Mostra o resultado formatado
       ******************************************************************
        EXIBIR-RESULTADO.
            DISPLAY " ".
            DISPLAY WS-LINHA.
-           DISPLAY "RESULTADO DA SOMA".
+           IF WS-OPERACAO = 1
+               DISPLAY "RESULTADO DA SOMA"
+           ELSE
+               DISPLAY "RESULTADO DA SUBTRACAO"
+           END-IF.
            DISPLAY WS-LINHA.
-           DISPLAY WS-NUMERO-1 " + " WS-NUMERO-2 " = "
-               WS-RESULTADO-DISPLAY.
+           IF WS-OPERACAO = 1
+               DISPLAY WS-NUMERO-1 " + " WS-NUMERO-2 " = "
+                   WS-RESULTADO-DISPLAY
+           ELSE
+               DISPLAY WS-NUMERO-1 " - " WS-NUMERO-2 " = "
+                   WS-RESULTADO-DISPLAY
+           END-IF.
            DISPLAY WS-LINHA.
            DISPLAY " ".
            DISPLAY "Programa encerrado com sucesso!".

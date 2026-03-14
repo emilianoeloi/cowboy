@@ -162,6 +162,7 @@ cobc -fsyntax-only src/CALCULADORA.cbl
 | COBOL Coder | `.github/agents/cobol-coder.agent.md` | Escrever e compilar código COBOL |
 | COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisar qualidade do código |
 | README Writer | `.github/agents/readme-writer.agent.md` | Atualizar READMEs em PT-BR, EN e ZH |
+| COBOL Vibecoder | `.github/agents/cobol-vibecoder.agent.md` | Orquestrar o fluxo completo: Planner → Setup → Code → Review → README |
 
 ---
 

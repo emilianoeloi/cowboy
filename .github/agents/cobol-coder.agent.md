@@ -1,7 +1,7 @@
 ---
 name: COBOL Coder
 description: Agente especializado em escrever código COBOL. Use quando precisar criar ou modificar programas COBOL. Compila e testa o código.
-tools: ['read_file', 'list_dir', 'search', 'edit_file', 'create_file', 'run_terminal']
+tools: ['editFiles', 'codebase', 'terminalLastCommand', 'findTestFiles']
 model: gpt-4o
 handoffs:
   - label: Revisar Código

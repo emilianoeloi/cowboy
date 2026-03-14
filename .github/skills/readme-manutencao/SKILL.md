@@ -72,14 +72,50 @@ Mantém os três READMEs do projeto (PT-BR, EN, ZH) sincronizados e atualizados.
 [🇧🇷 Português](./README.md) | [🇺🇸 English](./README-en.md) | 🇨🇳 中文
 ```
 
+## Sincronização de Exemplos de Código
+
+Os READMEs podem conter blocos de código COBOL para ilustrar funcionalidades.
+Esses blocos devem sempre refletir o código real em `src/CALCULADORA.cbl`.
+
+### Quando Verificar
+
+- Sempre que o COBOL Coder modificar `src/CALCULADORA.cbl`
+- Quando novos parágrafos ou operações forem adicionados
+- Quando nomes de variáveis forem alterados
+
+### Como Sincronizar
+
+1. **Leia** `src/CALCULADORA.cbl` por completo
+2. **Identifique** todos os blocos ` ```cobol ` nos três READMEs
+3. **Compare** cada bloco com o código real:
+   - Nomes de variáveis (ex: `WS-NUMERO-1`, `WS-RESULTADO`)
+   - Nomes de parágrafos (ex: `INICIO`, `PROCESSAR`)
+   - Operações implementadas (ex: `ADD`, `SUBTRACT`)
+4. **Atualize** os blocos desatualizados nos três idiomas simultaneamente
+5. **Nunca** invente código que não existe no arquivo `.cbl`
+6. **Prefira** recortes reais do arquivo a exemplos genéricos
+
+### Exemplo de Verificação
+
+Se o README mostra:
+```cobol
+ADD WS-NUMERO-1 TO WS-NUMERO-2 GIVING WS-RESULTADO.
+```
+E o arquivo `.cbl` foi alterado para incluir subtração, adicione também:
+```cobol
+SUBTRACT WS-NUMERO-2 FROM WS-NUMERO-1 GIVING WS-RESULTADO.
+```
+
 ## Processo de Atualização
 
-1. **Leia** o `README.md` (PT-BR) atual — é a fonte da verdade
-2. **Identifique** o que mudou no projeto (novos arquivos, features, estrutura)
-3. **Atualize** o `README.md` primeiro
-4. **Traduza** as mudanças para `README-en.md`
-5. **Traduza** as mudanças para `README-zh.md`
-6. **Verifique** que os links entre os arquivos funcionam
+1. **Leia** `src/CALCULADORA.cbl` — é a fonte da verdade do código
+2. **Leia** o `README.md` (PT-BR) atual — é a fonte da verdade da documentação
+3. **Identifique** o que mudou no projeto (novos arquivos, features, estrutura, código)
+4. **Atualize** os exemplos de código COBOL nos READMEs para refletir o `.cbl` atual
+5. **Atualize** o `README.md` primeiro
+6. **Traduza** as mudanças para `README-en.md`
+7. **Traduza** as mudanças para `README-zh.md`
+8. **Verifique** que os links entre os arquivos funcionam
 
 ## Checklist de Qualidade
 
@@ -89,3 +125,5 @@ Mantém os três READMEs do projeto (PT-BR, EN, ZH) sincronizados e atualizados.
 - [ ] Estrutura do projeto reflete o estado atual
 - [ ] Instruções de uso estão corretas
 - [ ] Nenhum conteúdo PT-BR ficou no EN ou ZH
+- [ ] Todos os blocos `\`\`\`cobol` nos READMEs refletem o código real de `src/CALCULADORA.cbl`
+- [ ] Nomes de variáveis e parágrafos nos exemplos estão corretos e atualizados

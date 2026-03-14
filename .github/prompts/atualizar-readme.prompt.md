@@ -38,7 +38,14 @@ Inclua todos os agentes, skills e prompts existentes.
 ### Seção: Como Usar
 Verifique que as instruções de compilação e execução estão corretas.
 
-### Seção: Exemplos
+### Seção: Exemplos de Código COBOL
+- Leia `src/CALCULADORA.cbl` por completo
+- Localize todos os blocos ` ```cobol ` nos três READMEs
+- Compare nomes de variáveis, parágrafos e operações com o código real
+- Atualize qualquer bloco desatualizado nos três idiomas
+- Nunca invente código que não existe no `.cbl`
+
+### Seção: Saída do Programa
 Se houver saída esperada do programa, atualize com o output atual.
 
 ## Restrições

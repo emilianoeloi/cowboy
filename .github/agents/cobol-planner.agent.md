@@ -1,7 +1,7 @@
 ---
 name: COBOL Planner
 description: Agente especializado em planejar programas COBOL. Use quando precisar criar um plano antes de implementar. Não faz mudanças no código, apenas planeja.
-tools: ['read_file', 'list_dir', 'search']
+tools: ['codebase']
 model: gpt-4o
 ---
 

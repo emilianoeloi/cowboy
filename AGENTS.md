@@ -3,7 +3,7 @@
 ## Sobre Este Projeto
 
 Este é o projeto Calculadora COBOL.
-Uma calculadora com soma e subtração.
+Uma calculadora com soma, subtração e multiplicação.
 Escrita em COBOL.
 Para aprender Agent Mode.
 

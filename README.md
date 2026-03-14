@@ -67,14 +67,15 @@ Este repositório é uma sandbox para explorar esse conceito de forma honesta e 
 ```
 ========================================
        CALCULADORA COBOL
-       Soma e Subtracao
+       Soma, Subtracao e Multiplicacao
 ========================================
 
 Escolha a operacao:
   1 - Soma
   2 - Subtracao
+  3 - Multiplicacao
 
-Digite sua opcao (1 ou 2): 
+Digite sua opcao (1, 2 ou 3): 
 1
 
 Digite o primeiro numero (0-99999): 
@@ -85,7 +86,7 @@ Digite o segundo numero (0-99999):
 ========================================
 RESULTADO DA SOMA
 ========================================
-00042 + 00058 =     100
+00042 + 00058 =        100
 ========================================
 
 Programa encerrado com sucesso!
@@ -236,6 +237,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *Nenhuma linha de COBOL foi digitada manualmente neste projeto.*
 
-*"Eu não temo os computadores. Temo a falta deles."* — Isaac Asimov
+*"A verdadeira alegria está em descobrir, não em saber."* — Isaac Asimov
 
 </div>

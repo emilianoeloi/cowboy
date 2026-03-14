@@ -143,13 +143,29 @@ cowboy/
 ├── src/
 │   └── CALCULADORA.cbl                 ← COBOL 程序
 ├── docs/
-│   └── TUTORIAL.md                     ← 分步教程
+│   ├── TUTORIAL.md                     ← 分步教程
+│   └── LEITURA_VOZ_ALTA.md             ← 大声阅读版本
 └── .github/
     ├── copilot-instructions.md         ← Copilot 指令
-    ├── agents/                         ← 专业代理
-    ├── skills/                         ← 可复用技能
-    ├── prompts/                        ← 可复用提示词
-    └── ISSUE_TEMPLATE/                 ← Issue 模板
+    ├── agents/
+    │   ├── cobol-planner.agent.md          ← 计划代理
+    │   ├── cobol-coder.agent.md            ← 编程代理
+    │   ├── cobol-reviewer.agent.md         ← 审查代理
+    │   └── readme-writer.agent.md          ← 文档代理
+    ├── skills/
+    │   ├── cobol-calculadora/
+    │   │   └── SKILL.md                    ← COBOL 技能
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← README 维护技能
+    ├── prompts/
+    │   ├── criar-programa.prompt.md        ← 提示词：创建程序
+    │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
+    │   ├── implementar-subtracao.prompt.md ← 提示词：实现减法
+    │   ├── testar-programa.prompt.md       ← 提示词：测试程序
+    │   ├── atualizar-readme.prompt.md      ← 提示词：更新 README
+    │   └── manutencao-repositorio.prompt.md ← 提示词：仓库维护
+    ├── ISSUE_TEMPLATE/                 ← Issue 模板
+    └── PULL_REQUEST_TEMPLATE/          ← PR 模板
 ```
 
 ---
@@ -170,7 +186,10 @@ Copilot 会自动读取 `AGENTS.md` 和 `.github/` 中的指令。
 ```
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
+.github/prompts/implementar-subtracao.prompt.md
 .github/prompts/testar-programa.prompt.md
+.github/prompts/atualizar-readme.prompt.md
+.github/prompts/manutencao-repositorio.prompt.md
 ```
 
 ### 第四步 — 观察并学习

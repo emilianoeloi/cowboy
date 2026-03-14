@@ -210,11 +210,46 @@ Quando completar uma tarefa, responda:
 
 ---
 
+## Agentes Disponíveis
+
+| Agente | Arquivo | Uso |
+|--------|---------|-----|
+| COBOL Planner | `.github/agents/cobol-planner.agent.md` | Planejar antes de implementar |
+| COBOL Coder | `.github/agents/cobol-coder.agent.md` | Escrever e compilar código COBOL |
+| COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisar qualidade do código |
+| README Writer | `.github/agents/readme-writer.agent.md` | Atualizar READMEs em PT-BR, EN e ZH |
+
+---
+
+## Skills Disponíveis
+
+| Skill | Arquivo | Uso |
+|-------|---------|-----|
+| cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras em COBOL |
+| readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
+
+---
+
+## Prompts Disponíveis
+
+| Prompt | Arquivo | Uso |
+|--------|---------|-----|
+| Criar Programa | `.github/prompts/criar-programa.prompt.md` | Criar o programa COBOL do zero |
+| Implementar Soma | `.github/prompts/implementar-soma.prompt.md` | Adicionar operação de soma |
+| Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
+| Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
+| Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
+| Manutenção do Repositório | `.github/prompts/manutencao-repositorio.prompt.md` | Manutenção geral do projeto |
+
+---
+
 ## Lembre-se
 
 COBOL é verboso por design.
 Isso é uma característica, não um bug.
 A legibilidade era o objetivo em 1959.
 E ainda é valorizada hoje.
+
+Documentação multilíngue também é uma arte. 📝
 
 Vamos criar código COBOL limpo! 🖥️

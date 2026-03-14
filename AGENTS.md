@@ -71,6 +71,7 @@ PROCEDURE DIVISION.
 
 ```
 cowboy/
+├── AGENTS.md                         ← Este arquivo
 ├── src/
 │   └── CALCULADORA.cbl                     ← Programa principal
 ├── docs/
@@ -78,7 +79,6 @@ cowboy/
 │   └── LEITURA_VOZ_ALTA.md                 ← Versão para leitura em voz alta
 └── .github/
     ├── copilot-instructions.md             ← Instruções do Copilot
-    ├── AGENTS.md                           ← Este arquivo
     ├── agents/
     │   ├── cobol-planner.agent.md          ← Agente planejador
     │   ├── cobol-coder.agent.md            ← Agente programador

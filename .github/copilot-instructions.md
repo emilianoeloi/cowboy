@@ -244,6 +244,7 @@ Quando completar uma tarefa, responda:
 | Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
 | Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
 | Implementar Divisão | `.github/prompts/implementar-divisao.prompt.md` | Adicionar operação de divisão |
+| Implementar Logaritmo | `.github/prompts/implementar-log.prompt.md` | Adicionar operação de logaritmo (base 10) |
 
 ---
 

@@ -67,7 +67,7 @@ Este repositório é uma sandbox para explorar esse conceito de forma honesta e 
 ```
 ========================================
        CALCULADORA COBOL
-       Soma, Subtracao, Multiplicacao e Divisao
+   Soma, Subtracao, Multiplicacao, Divisao e Log
 ========================================
 
 Escolha a operacao:
@@ -75,19 +75,18 @@ Escolha a operacao:
   2 - Subtracao
   3 - Multiplicacao
   4 - Divisao
+  5 - Logaritmo (base 10)
 
-Digite sua opcao (1, 2, 3 ou 4): 
-4
+Digite sua opcao (1, 2, 3, 4 ou 5): 
+5
 
-Digite o primeiro numero (0-99999): 
-10
-Digite o segundo numero (0-99999): 
-4
+Digite o numero (deve ser maior que zero): 
+1000
 
 ========================================
-RESULTADO DA DIVISAO
+RESULTADO DO LOGARITMO
 ========================================
-00010 / 00004 =          2.50
+LOG10(01000) =     3.000000
 ========================================
 
 Programa encerrado com sucesso!
@@ -172,6 +171,7 @@ cowboy/
     │   ├── implementar-soma.prompt.md      ← Prompt: implementar soma
     │   ├── implementar-subtracao.prompt.md ← Prompt: implementar subtração
     │   ├── implementar-divisao.prompt.md   ← Prompt: implementar divisão
+    │   ├── implementar-log.prompt.md       ← Prompt: implementar logaritmo
     │   ├── testar-programa.prompt.md       ← Prompt: testar programa
     │   ├── atualizar-readme.prompt.md      ← Prompt: atualizar READMEs
     │   └── manutencao-repositorio.prompt.md ← Prompt: manutenção do repositório
@@ -210,6 +210,7 @@ Execute os prompts na ordem, um por um:
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
 .github/prompts/implementar-divisao.prompt.md
+.github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
 ```
@@ -272,6 +273,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *Nenhuma linha de COBOL foi digitada manualmente neste projeto.*
 
-*"A verdadeira alegria está em descobrir, não em saber."* — Isaac Asimov
+*"A ciência reúne conhecimento mais rápido do que a sociedade reúne sabedoria."* — Isaac Asimov
 
 </div>

@@ -239,7 +239,6 @@ Quando completar uma tarefa, responda:
 | Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
 | Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
 | Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
-| Manutenção do Repositório | `.github/prompts/manutencao-repositorio.prompt.md` | Manutenção geral do projeto |
 
 ---
 

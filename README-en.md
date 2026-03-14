@@ -162,7 +162,6 @@ cowboy/
     │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
     │   ├── testar-programa.prompt.md       ← Prompt: test program
     │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
-    │   └── manutencao-repositorio.prompt.md ← Prompt: repo maintenance
     ├── ISSUE_TEMPLATE/
     │   ├── bug_report.yml
     │   └── feature_request.yml
@@ -191,7 +190,6 @@ Copilot will automatically read `AGENTS.md` and the instructions in `.github/`.
 .github/prompts/implementar-subtracao.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
-.github/prompts/manutencao-repositorio.prompt.md
 ```
 
 ### Step 4 — Watch and learn

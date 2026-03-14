@@ -162,8 +162,7 @@ cowboy/
     │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
     │   ├── implementar-subtracao.prompt.md ← 提示词：实现减法
     │   ├── testar-programa.prompt.md       ← 提示词：测试程序
-    │   ├── atualizar-readme.prompt.md      ← 提示词：更新 README
-    │   └── manutencao-repositorio.prompt.md ← 提示词：仓库维护
+    │   └── atualizar-readme.prompt.md      ← 提示词：更新 README
     ├── ISSUE_TEMPLATE/                 ← Issue 模板
     └── PULL_REQUEST_TEMPLATE/          ← PR 模板
 ```
@@ -189,7 +188,6 @@ Copilot 会自动读取 `AGENTS.md` 和 `.github/` 中的指令。
 .github/prompts/implementar-subtracao.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
-.github/prompts/manutencao-repositorio.prompt.md
 ```
 
 ### 第四步 — 观察并学习

@@ -67,7 +67,7 @@
 ```
 ========================================
        CALCULADORA COBOL
-       Soma, Subtracao, Multiplicacao e Divisao
+   Soma, Subtracao, Multiplicacao, Divisao e Log
 ========================================
 
 Escolha a operacao:
@@ -75,19 +75,18 @@ Escolha a operacao:
   2 - Subtracao
   3 - Multiplicacao
   4 - Divisao
+  5 - Logaritmo (base 10)
 
-Digite sua opcao (1, 2, 3 ou 4): 
-4
+Digite sua opcao (1, 2, 3, 4 ou 5): 
+5
 
-Digite o primeiro numero (0-99999): 
-10
-Digite o segundo numero (0-99999): 
-4
+Digite o numero (deve ser maior que zero): 
+1000
 
 ========================================
-RESULTADO DA DIVISAO
+RESULTADO DO LOGARITMO
 ========================================
-00010 / 00004 =          2.50
+LOG10(01000) =     3.000000
 ========================================
 
 Programa encerrado com sucesso!
@@ -174,6 +173,7 @@ cowboy/
     │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
     │   ├── implementar-subtracao.prompt.md ← 提示词：实现减法
     │   ├── implementar-divisao.prompt.md   ← 提示词：实现除法
+    │   ├── implementar-log.prompt.md       ← 提示词：实现对数
     │   ├── testar-programa.prompt.md       ← 提示词：测试程序
     │   ├── atualizar-readme.prompt.md      ← 提示词：更新 README
     │   └── manutencao-repositorio.prompt.md ← 提示词：仓库维护
@@ -201,6 +201,7 @@ Copilot 会自动读取 `AGENTS.md` 和 `.github/` 中的指令。
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
 .github/prompts/implementar-divisao.prompt.md
+.github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
 ```
@@ -239,6 +240,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *本项目中没有人工手写过任何一行 COBOL。*
 
-*「真正的喜悦在于发现，而非知晓。」* — 艾萨克·阿西莫夫
+*「科学积累知识的速度远超社会积累智慧的速度。」* — 艾萨克·阿西莫夫
 
 </div>

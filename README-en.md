@@ -67,7 +67,7 @@ This repository is a sandbox to explore this concept honestly and practically.
 ```
 ========================================
        CALCULADORA COBOL
-       Soma, Subtracao, Multiplicacao e Divisao
+   Soma, Subtracao, Multiplicacao, Divisao e Log
 ========================================
 
 Escolha a operacao:
@@ -75,19 +75,18 @@ Escolha a operacao:
   2 - Subtracao
   3 - Multiplicacao
   4 - Divisao
+  5 - Logaritmo (base 10)
 
-Digite sua opcao (1, 2, 3 ou 4): 
-4
+Digite sua opcao (1, 2, 3, 4 ou 5): 
+5
 
-Digite o primeiro numero (0-99999): 
-10
-Digite o segundo numero (0-99999): 
-4
+Digite o numero (deve ser maior que zero): 
+1000
 
 ========================================
-RESULTADO DA DIVISAO
+RESULTADO DO LOGARITMO
 ========================================
-00010 / 00004 =          2.50
+LOG10(01000) =     3.000000
 ========================================
 
 Programa encerrado com sucesso!
@@ -173,6 +172,7 @@ cowboy/
     │   ├── implementar-soma.prompt.md      ← Prompt: implement sum
     │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
     │   ├── implementar-divisao.prompt.md   ← Prompt: implement division
+    │   ├── implementar-log.prompt.md       ← Prompt: implement logarithm
     │   ├── testar-programa.prompt.md       ← Prompt: test program
     │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
     │   └── manutencao-repositorio.prompt.md ← Prompt: repository maintenance
@@ -203,6 +203,7 @@ Copilot will automatically read `AGENTS.md` and the instructions in `.github/`.
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
 .github/prompts/implementar-divisao.prompt.md
+.github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
 ```
@@ -241,6 +242,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *Not a single line of COBOL was typed manually in this project.*
 
-*"The true delight is in the finding out rather than in the knowing."* — Isaac Asimov
+*"Science gathers knowledge faster than society gathers wisdom."* — Isaac Asimov
 
 </div>

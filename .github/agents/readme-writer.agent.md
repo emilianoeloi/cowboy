@@ -85,6 +85,45 @@ Tom: casual, direto, levemente provocador. Nunca pedante.
 **README-en.md:** `[🇧🇷 Português](./README.md) | 🇺🇸 English | [🇨🇳 中文](./README-zh.md)`
 **README-zh.md:** `[🇧🇷 Português](./README.md) | [🇺🇸 English](./README-en.md) | 🇨🇳 中文`
 
+## Rotação de Citações — Isaac Asimov
+
+O rodapé dos três READMEs termina com uma citação de Isaac Asimov.
+**A cada atualização, troque a citação pela próxima da lista abaixo.**
+
+### Como rotacionar
+1. Leia a citação atual nos três READMEs
+2. Identifique qual é na lista abaixo
+3. Use a **próxima** da lista (ou volte ao início se for a última)
+4. Aplique nos três idiomas simultaneamente
+
+### Banco de Citações
+
+| # | PT-BR | EN | ZH |
+|---|-------|----|----|
+| 1 | *"A verdadeira alegria está em descobrir, não em saber."* | *"The true delight is in the finding out rather than in the knowing."* | *「真正的喜悦在于发现，而非知晓。」* |
+| 2 | *"A ciência reúne conhecimento mais rápido do que a sociedade reúne sabedoria."* | *"Science gathers knowledge faster than society gathers wisdom."* | *「科学积累知识的速度远超社会积累智慧的速度。」* |
+| 3 | *"O verdadeiro perigo não é que os computadores comecem a pensar como humanos, mas que os humanos comecem a pensar como computadores."* | *"The real danger is not that computers will begin to think like men, but that men will begin to think like computers."* | *「真正的危险不是电脑开始像人类一样思考，而是人类开始像电脑一样思考。」* |
+| 4 | *"Qualquer tecnologia suficientemente avançada é indistinguível da magia."* *(Clarke, citado por Asimov)* | *"Any sufficiently advanced technology is indistinguishable from magic."* *(Clarke, quoted by Asimov)* | *「任何足够先进的技术都与魔法无异。」* |
+| 5 | *"Autoedução é, acredito, o único tipo de educação que existe."* | *"Self-education is, I firmly believe, the only kind of education there is."* | *「自我教育，我坚信，是唯一真正存在的教育。」* |
+| 6 | *"O maior bem que podemos fazer à humanidade é ensinar as pessoas a pensar."* | *"The greatest gift we can give humanity is to teach people to think."* | *「我们能给人类的最大礼物，是教会人们思考。」* |
+
+### Formato no rodapé (manter exato)
+
+**PT-BR:**
+```markdown
+*"[citação em português]"* — Isaac Asimov
+```
+**EN:**
+```markdown
+*"[quote in English]"* — Isaac Asimov
+```
+**ZH:**
+```markdown
+*「[中文引用]」* — 艾萨克·阿西莫夫
+```
+
+---
+
 ## Formato de Resposta
 
 ```markdown

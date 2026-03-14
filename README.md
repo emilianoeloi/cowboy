@@ -186,16 +186,24 @@ cowboy/
 
 ## Como usar o tutorial 📖
 
-### Passo 1 — Prepare o ambiente
+Este tutorial pode ser feito de **3 formas**, cada uma explorando um nível distinto do GitHub Copilot. Escolha a que mais combina com você — ou faça as três.
 
-Clone o repositório e abra no VS Code com o Copilot instalado.
+---
 
-### Passo 2 — Ative o Agent Mode
+### 💬 Modo 1 — Chat
 
-No Copilot Chat, mude de "Ask" para "Agent".  
-O Copilot vai ler automaticamente o `AGENTS.md` e as instruções em `.github/`.
+> Converse com o Copilot e peça para ele criar o código.
 
-### Passo 3 — Execute os prompts na ordem
+No Copilot Chat, use o modo **Ask** e descreva o que quer implementar.  
+O Copilot vai sugerir o código. Você revisa, aceita e aprende.
+
+---
+
+### 📋 Modo 2 — Prompts
+
+> Use um prompt específico para cada operação já criada no projeto.
+
+Execute os prompts na ordem, um por um:
 
 ```
 .github/prompts/criar-programa.prompt.md
@@ -206,10 +214,34 @@ O Copilot vai ler automaticamente o `AGENTS.md` e as instruções em `.github/`.
 .github/prompts/atualizar-readme.prompt.md
 ```
 
-### Passo 4 — Observe e aprenda
+Cada prompt é um roteiro pronto. Você executa, o Copilot implementa.
 
-Veja o agente criar, compilar e executar código COBOL.  
+---
+
+### 🤖 Modo 3 — Agent
+
+> Um agente especializado orquestra todo o fluxo por você.
+
+No Copilot Chat, mude de "Ask" para **Agent** e invoque o `COBOL Vibecoder`.  
+Ele vai ler o `AGENTS.md`, planejar, codar, revisar e atualizar a documentação — sozinho.
+
+```
+@COBOL Vibecoder implemente a operação de multiplicação na calculadora
+```
+
+Veja um agente criar, compilar e executar código COBOL.  
 Uma linguagem de 1959. Funcionando com IA de 2026.
+
+---
+
+### 🌱 Bônus — Roots
+
+> Só uma mente de programador e um arquivo de texto. Sem IA, sem internet.
+
+Leia o código COBOL manualmente. Entenda a estrutura. Escreva com as próprias mãos.  
+Para quem quer sentir o peso de 1959.
+
+Útil também quando o [Downdetector](https://downdetector.com.br/) confirmar que a IA caiu. 😄
 
 ---
 

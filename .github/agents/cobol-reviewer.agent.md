@@ -1,7 +1,7 @@
 ---
 name: COBOL Reviewer
 description: Agente especializado em revisar código COBOL. Analisa qualidade, verifica boas práticas, sugere melhorias. Use após implementações.
-tools: ['read_file', 'list_dir', 'search']
+tools: ['codebase']
 model: gpt-4o
 ---
 

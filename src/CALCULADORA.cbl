@@ -1,6 +1,6 @@
       ******************************************************************
       * Programa: CALCULADORA
-      * Descrição: Calculadora de soma em COBOL
+      * Descrição: Calculadora de soma, subtração e multiplicação em COBOL
       * Autor: Copilot Agent
       * Data: 2026
       ******************************************************************
@@ -25,10 +25,11 @@
        01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
 
       * Resultado com sinal para suportar negativos
-       01 WS-RESULTADO         PIC S9(6) VALUE ZEROS.
+      * PIC S9(10) para comportar multiplicacao (99999 x 99999 = ~10 digitos)
+       01 WS-RESULTADO         PIC S9(10) VALUE ZEROS.
 
       * Resultado formatado para display (exibe sinal negativo)
-       01 WS-RESULTADO-DISPLAY PIC -(6)9.
+       01 WS-RESULTADO-DISPLAY PIC -(9)9.
 
       * Linha decorativa
        01 WS-LINHA             PIC X(40) VALUE ALL "=".
@@ -46,6 +47,8 @@
                PERFORM CALCULAR-SOMA
            ELSE IF WS-OPERACAO = 2
                PERFORM CALCULAR-SUBTRACAO
+           ELSE IF WS-OPERACAO = 3
+               PERFORM CALCULAR-MULTIPLICACAO
            ELSE
                DISPLAY "Opcao invalida! Encerrando."
                STOP RUN
@@ -59,7 +62,7 @@
        EXIBIR-CABECALHO.
            DISPLAY WS-LINHA.
            DISPLAY "       CALCULADORA COBOL".
-           DISPLAY "       Soma e Subtracao".
+           DISPLAY "       Soma, Subtracao e Multiplicacao".
            DISPLAY WS-LINHA.
 
       ******************************************************************
@@ -70,8 +73,9 @@
            DISPLAY "Escolha a operacao:".
            DISPLAY "  1 - Soma".
            DISPLAY "  2 - Subtracao".
+           DISPLAY "  3 - Multiplicacao".
            DISPLAY " ".
-           DISPLAY "Digite sua opcao (1 ou 2): ".
+           DISPLAY "Digite sua opcao (1, 2 ou 3): ".
            ACCEPT WS-OPERACAO.
 
       ******************************************************************
@@ -101,6 +105,14 @@
            MOVE WS-RESULTADO TO WS-RESULTADO-DISPLAY.
 
       ******************************************************************
+      * CALCULAR-MULTIPLICACAO - Realiza a operação de multiplicação
+      ******************************************************************
+       CALCULAR-MULTIPLICACAO.
+           MULTIPLY WS-NUMERO-1 BY WS-NUMERO-2
+               GIVING WS-RESULTADO.
+           MOVE WS-RESULTADO TO WS-RESULTADO-DISPLAY.
+
+      ******************************************************************
       * EXIBIR-RESULTADO - Mostra o resultado formatado
       ******************************************************************
        EXIBIR-RESULTADO.
@@ -108,15 +120,20 @@
            DISPLAY WS-LINHA.
            IF WS-OPERACAO = 1
                DISPLAY "RESULTADO DA SOMA"
-           ELSE
+           ELSE IF WS-OPERACAO = 2
                DISPLAY "RESULTADO DA SUBTRACAO"
+           ELSE
+               DISPLAY "RESULTADO DA MULTIPLICACAO"
            END-IF.
            DISPLAY WS-LINHA.
            IF WS-OPERACAO = 1
                DISPLAY WS-NUMERO-1 " + " WS-NUMERO-2 " = "
                    WS-RESULTADO-DISPLAY
-           ELSE
+           ELSE IF WS-OPERACAO = 2
                DISPLAY WS-NUMERO-1 " - " WS-NUMERO-2 " = "
+                   WS-RESULTADO-DISPLAY
+           ELSE
+               DISPLAY WS-NUMERO-1 " x " WS-NUMERO-2 " = "
                    WS-RESULTADO-DISPLAY
            END-IF.
            DISPLAY WS-LINHA.

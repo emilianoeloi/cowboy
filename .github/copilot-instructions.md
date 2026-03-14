@@ -78,11 +78,14 @@ Colunas:
        01 WS-NUMERO-1          PIC 9(5) VALUE ZEROS.
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
       
-      * Variável para resultado
-       01 WS-RESULTADO         PIC 9(6) VALUE ZEROS.
+      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao)
+       01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
+      
+      * Resultado com sinal (S9(10) suporta multiplicacao de 5 digitos)
+       01 WS-RESULTADO         PIC S9(10) VALUE ZEROS.
       
       * Variável para display formatado
-       01 WS-RESULTADO-DISPLAY PIC Z(5)9.
+       01 WS-RESULTADO-DISPLAY PIC -(9)9.
 ```
 
 ### Picture Clauses Comuns

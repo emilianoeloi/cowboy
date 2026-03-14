@@ -146,19 +146,27 @@ cowboy/
 └── .github/
     ├── copilot-instructions.md         ← Instruções do Copilot
     ├── agents/
-    │   ├── cobol-planner.agent.md      ← Agente planejador
-    │   ├── cobol-coder.agent.md        ← Agente programador
-    │   └── cobol-reviewer.agent.md     ← Agente revisor
+    │   ├── cobol-planner.agent.md          ← Agente planejador
+    │   ├── cobol-coder.agent.md            ← Agente programador
+    │   ├── cobol-reviewer.agent.md         ← Agente revisor
+    │   └── readme-writer.agent.md          ← Agente de documentação
     ├── skills/
-    │   └── cobol-calculadora/
-    │       └── SKILL.md                ← Skill de COBOL
+    │   ├── cobol-calculadora/
+    │   │   └── SKILL.md                    ← Skill de COBOL
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← Skill de READMEs
     ├── prompts/
-    │   ├── criar-programa.prompt.md    ← Prompt: criar programa
-    │   ├── implementar-soma.prompt.md  ← Prompt: implementar soma
-    │   └── testar-programa.prompt.md   ← Prompt: testar
-    └── ISSUE_TEMPLATE/
-        ├── bug_report.yml
-        └── feature_request.yml
+    │   ├── criar-programa.prompt.md        ← Prompt: criar programa
+    │   ├── implementar-soma.prompt.md      ← Prompt: implementar soma
+    │   ├── implementar-subtracao.prompt.md ← Prompt: implementar subtração
+    │   ├── testar-programa.prompt.md       ← Prompt: testar programa
+    │   ├── atualizar-readme.prompt.md      ← Prompt: atualizar READMEs
+    │   └── manutencao-repositorio.prompt.md ← Prompt: manutenção do repo
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.yml
+    │   └── feature_request.yml
+    └── PULL_REQUEST_TEMPLATE/
+        └── pull_request_template.md        ← Template de PR
 ```
 
 ---
@@ -179,7 +187,10 @@ O Copilot vai ler automaticamente o `AGENTS.md` e as instruções em `.github/`.
 ```
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
+.github/prompts/implementar-subtracao.prompt.md
 .github/prompts/testar-programa.prompt.md
+.github/prompts/atualizar-readme.prompt.md
+.github/prompts/manutencao-repositorio.prompt.md
 ```
 
 ### Passo 4 — Observe e aprenda

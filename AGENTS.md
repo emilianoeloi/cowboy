@@ -3,7 +3,7 @@
 ## Sobre Este Projeto
 
 Este é o projeto Calculadora COBOL.
-Uma calculadora simples de soma.
+Uma calculadora com soma e subtração.
 Escrita em COBOL.
 Para aprender Agent Mode.
 
@@ -70,11 +70,30 @@ PROCEDURE DIVISION.
 ## Estrutura de Pastas
 
 ```
-src/
-└── CALCULADORA.cbl    ← Programa principal
-
-test/
-└── TEST-CALC.cbl      ← Programa de teste (opcional)
+cowboy/
+├── src/
+│   └── CALCULADORA.cbl                     ← Programa principal
+├── docs/
+│   ├── TUTORIAL.md                         ← Tutorial passo a passo
+│   └── LEITURA_VOZ_ALTA.md                 ← Versão para leitura em voz alta
+└── .github/
+    ├── copilot-instructions.md             ← Instruções do Copilot
+    ├── AGENTS.md                           ← Este arquivo
+    ├── agents/
+    │   ├── cobol-planner.agent.md          ← Agente planejador
+    │   ├── cobol-coder.agent.md            ← Agente programador
+    │   ├── cobol-reviewer.agent.md         ← Agente revisor
+    │   └── readme-writer.agent.md          ← Agente de documentação
+    ├── skills/
+    │   ├── cobol-calculadora/SKILL.md      ← Skill de COBOL
+    │   └── readme-manutencao/SKILL.md      ← Skill de READMEs
+    └── prompts/
+        ├── criar-programa.prompt.md
+        ├── implementar-soma.prompt.md
+        ├── implementar-subtracao.prompt.md
+        ├── testar-programa.prompt.md
+        ├── atualizar-readme.prompt.md
+        └── manutencao-repositorio.prompt.md
 ```
 
 ---
@@ -132,6 +151,39 @@ cobc -fsyntax-only src/CALCULADORA.cbl
 * Número editado para display
 01 WS-DISPLAY       PIC Z(4)9.
 ```
+
+---
+
+## Agentes Disponíveis
+
+| Agente | Arquivo | Uso |
+|--------|---------|-----|
+| COBOL Planner | `.github/agents/cobol-planner.agent.md` | Planejar antes de implementar |
+| COBOL Coder | `.github/agents/cobol-coder.agent.md` | Escrever e compilar código COBOL |
+| COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisar qualidade do código |
+| README Writer | `.github/agents/readme-writer.agent.md` | Atualizar READMEs em PT-BR, EN e ZH |
+
+---
+
+## Skills Disponíveis
+
+| Skill | Arquivo | Uso |
+|-------|---------|-----|
+| cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras em COBOL |
+| readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
+
+---
+
+## Prompts Disponíveis
+
+| Prompt | Arquivo | Uso |
+|--------|---------|-----|
+| Criar Programa | `.github/prompts/criar-programa.prompt.md` | Criar o programa COBOL do zero |
+| Implementar Soma | `.github/prompts/implementar-soma.prompt.md` | Adicionar operação de soma |
+| Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
+| Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
+| Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
+| Manutenção do Repositório | `.github/prompts/manutencao-repositorio.prompt.md` | Manutenção geral do projeto |
 
 ---
 

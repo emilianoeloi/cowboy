@@ -147,19 +147,27 @@ cowboy/
 └── .github/
     ├── copilot-instructions.md         ← Copilot instructions
     ├── agents/
-    │   ├── cobol-planner.agent.md      ← Planner agent
-    │   ├── cobol-coder.agent.md        ← Coder agent
-    │   └── cobol-reviewer.agent.md     ← Reviewer agent
+    │   ├── cobol-planner.agent.md          ← Planner agent
+    │   ├── cobol-coder.agent.md            ← Coder agent
+    │   ├── cobol-reviewer.agent.md         ← Reviewer agent
+    │   └── readme-writer.agent.md          ← Documentation agent
     ├── skills/
-    │   └── cobol-calculadora/
-    │       └── SKILL.md                ← COBOL skill
+    │   ├── cobol-calculadora/
+    │   │   └── SKILL.md                    ← COBOL skill
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← README maintenance skill
     ├── prompts/
-    │   ├── criar-programa.prompt.md    ← Prompt: create program
-    │   ├── implementar-soma.prompt.md  ← Prompt: implement sum
-    │   └── testar-programa.prompt.md   ← Prompt: test program
-    └── ISSUE_TEMPLATE/
-        ├── bug_report.yml
-        └── feature_request.yml
+    │   ├── criar-programa.prompt.md        ← Prompt: create program
+    │   ├── implementar-soma.prompt.md      ← Prompt: implement sum
+    │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
+    │   ├── testar-programa.prompt.md       ← Prompt: test program
+    │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
+    │   └── manutencao-repositorio.prompt.md ← Prompt: repo maintenance
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.yml
+    │   └── feature_request.yml
+    └── PULL_REQUEST_TEMPLATE/
+        └── pull_request_template.md        ← PR template
 ```
 
 ---
@@ -180,7 +188,10 @@ Copilot will automatically read `AGENTS.md` and the instructions in `.github/`.
 ```
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
+.github/prompts/implementar-subtracao.prompt.md
 .github/prompts/testar-programa.prompt.md
+.github/prompts/atualizar-readme.prompt.md
+.github/prompts/manutencao-repositorio.prompt.md
 ```
 
 ### Step 4 — Watch and learn

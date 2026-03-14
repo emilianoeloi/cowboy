@@ -66,19 +66,29 @@
 
 ```
 ========================================
-       COBOL 计算器
-       两数之和
+       CALCULADORA COBOL
+       Soma e Subtracao
 ========================================
 
-请输入第一个数字 (0-99999): 
+Escolha a operacao:
+  1 - Soma
+  2 - Subtracao
+
+Digite sua opcao (1 ou 2): 
+1
+
+Digite o primeiro numero (0-99999): 
 42
-请输入第二个数字 (0-99999): 
+Digite o segundo numero (0-99999): 
 58
 
 ========================================
-计算结果
+RESULTADO DA SOMA
 ========================================
-00042 + 00058 = 000100
+00042 + 00058 =     100
+========================================
+
+Programa encerrado com sucesso!
 ```
 
 > 这段代码由 GitHub Copilot Agent Mode 编写。  
@@ -162,7 +172,8 @@ cowboy/
     │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
     │   ├── implementar-subtracao.prompt.md ← 提示词：实现减法
     │   ├── testar-programa.prompt.md       ← 提示词：测试程序
-    │   └── atualizar-readme.prompt.md      ← 提示词：更新 README
+    │   ├── atualizar-readme.prompt.md      ← 提示词：更新 README
+    │   └── manutencao-repositorio.prompt.md ← 提示词：仓库维护
     ├── ISSUE_TEMPLATE/                 ← Issue 模板
     └── PULL_REQUEST_TEMPLATE/          ← PR 模板
 ```
@@ -223,5 +234,7 @@ MIT © [cowboy contributors](./LICENSE)
 **由 🤠 和 GitHub Copilot Agent Mode 共同制作**
 
 *本项目中没有人工手写过任何一行 COBOL。*
+
+*「我不害怕计算机。我害怕没有计算机。」* — 艾萨克·阿西莫夫
 
 </div>

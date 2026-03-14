@@ -1,6 +1,6 @@
       ******************************************************************
       * Programa: CALCULADORA
-      * Descrição: Calculadora de soma, subtração e multiplicação em COBOL
+      * Descrição: Calculadora de soma, subtração, multiplicação e divisão
       * Autor: Copilot Agent
       * Data: 2026
       ******************************************************************
@@ -21,7 +21,7 @@
        01 WS-NUMERO-1          PIC 9(5) VALUE ZEROS.
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
 
-      * Operação escolhida (1=Soma, 2=Subtração)
+      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao, 4=Divisao)
        01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
 
       * Resultado com sinal para suportar negativos
@@ -30,6 +30,12 @@
 
       * Resultado formatado para display (exibe sinal negativo)
        01 WS-RESULTADO-DISPLAY PIC -(9)9.
+
+      * Resultado da divisão com 2 casas decimais
+       01 WS-RESULTADO-DIVISAO     PIC S9(10)V99 VALUE ZEROS.
+
+      * Resultado da divisão formatado para display
+       01 WS-RESULTADO-DIV-DISPLAY PIC -(9)9.99.
 
       * Linha decorativa
        01 WS-LINHA             PIC X(40) VALUE ALL "=".
@@ -49,6 +55,8 @@
                PERFORM CALCULAR-SUBTRACAO
            ELSE IF WS-OPERACAO = 3
                PERFORM CALCULAR-MULTIPLICACAO
+           ELSE IF WS-OPERACAO = 4
+               PERFORM CALCULAR-DIVISAO
            ELSE
                DISPLAY "Opcao invalida! Encerrando."
                STOP RUN
@@ -62,7 +70,7 @@
        EXIBIR-CABECALHO.
            DISPLAY WS-LINHA.
            DISPLAY "       CALCULADORA COBOL".
-           DISPLAY "       Soma, Subtracao e Multiplicacao".
+           DISPLAY "       Soma, Subtracao, Multiplicacao e Divisao".
            DISPLAY WS-LINHA.
 
       ******************************************************************
@@ -74,8 +82,9 @@
            DISPLAY "  1 - Soma".
            DISPLAY "  2 - Subtracao".
            DISPLAY "  3 - Multiplicacao".
+           DISPLAY "  4 - Divisao".
            DISPLAY " ".
-           DISPLAY "Digite sua opcao (1, 2 ou 3): ".
+           DISPLAY "Digite sua opcao (1, 2, 3 ou 4): ".
            ACCEPT WS-OPERACAO.
 
       ******************************************************************
@@ -113,6 +122,23 @@
            MOVE WS-RESULTADO TO WS-RESULTADO-DISPLAY.
 
       ******************************************************************
+      * CALCULAR-DIVISAO - Realiza a operação de divisão
+      *                    Verifica divisão por zero antes de calcular
+      ******************************************************************
+       CALCULAR-DIVISAO.
+           IF WS-NUMERO-2 = ZERO
+               DISPLAY " "
+               DISPLAY "ERRO: Divisao por zero nao e permitida!"
+               DISPLAY " "
+               STOP RUN
+           ELSE
+               DIVIDE WS-NUMERO-1 BY WS-NUMERO-2
+                   GIVING WS-RESULTADO-DIVISAO
+               MOVE WS-RESULTADO-DIVISAO
+                   TO WS-RESULTADO-DIV-DISPLAY
+           END-IF.
+
+      ******************************************************************
       * EXIBIR-RESULTADO - Mostra o resultado formatado
       ******************************************************************
        EXIBIR-RESULTADO.
@@ -122,8 +148,10 @@
                DISPLAY "RESULTADO DA SOMA"
            ELSE IF WS-OPERACAO = 2
                DISPLAY "RESULTADO DA SUBTRACAO"
-           ELSE
+           ELSE IF WS-OPERACAO = 3
                DISPLAY "RESULTADO DA MULTIPLICACAO"
+           ELSE
+               DISPLAY "RESULTADO DA DIVISAO"
            END-IF.
            DISPLAY WS-LINHA.
            IF WS-OPERACAO = 1
@@ -132,9 +160,12 @@
            ELSE IF WS-OPERACAO = 2
                DISPLAY WS-NUMERO-1 " - " WS-NUMERO-2 " = "
                    WS-RESULTADO-DISPLAY
-           ELSE
+           ELSE IF WS-OPERACAO = 3
                DISPLAY WS-NUMERO-1 " x " WS-NUMERO-2 " = "
                    WS-RESULTADO-DISPLAY
+           ELSE
+               DISPLAY WS-NUMERO-1 " / " WS-NUMERO-2 " = "
+                   WS-RESULTADO-DIV-DISPLAY
            END-IF.
            DISPLAY WS-LINHA.
            DISPLAY " ".

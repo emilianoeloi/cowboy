@@ -78,7 +78,7 @@ Colunas:
        01 WS-NUMERO-1          PIC 9(5) VALUE ZEROS.
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
       
-      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao)
+      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao, 4=Divisao)
        01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
       
       * Resultado com sinal (S9(10) suporta multiplicacao de 5 digitos)
@@ -243,6 +243,7 @@ Quando completar uma tarefa, responda:
 | Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
 | Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
 | Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
+| Implementar Divisão | `.github/prompts/implementar-divisao.prompt.md` | Adicionar operação de divisão |
 
 ---
 

@@ -3,7 +3,7 @@
 ## Sobre Este Projeto
 
 Este é o projeto Calculadora COBOL.
-Uma calculadora com soma, subtração e multiplicação.
+Uma calculadora com soma, subtração, multiplicação e divisão.
 Escrita em COBOL.
 Para aprender Agent Mode.
 
@@ -91,6 +91,7 @@ cowboy/
         ├── criar-programa.prompt.md
         ├── implementar-soma.prompt.md
         ├── implementar-subtracao.prompt.md
+        ├── implementar-divisao.prompt.md
         ├── testar-programa.prompt.md
         ├── atualizar-readme.prompt.md
         └── manutencao-repositorio.prompt.md
@@ -184,6 +185,7 @@ cobc -fsyntax-only src/CALCULADORA.cbl
 | Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
 | Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
 | Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
+| Implementar Divisão | `.github/prompts/implementar-divisao.prompt.md` | Adicionar operação de divisão |
 | Manutenção do Repositório | `.github/prompts/manutencao-repositorio.prompt.md` | Manutenção geral do projeto |
 
 ---

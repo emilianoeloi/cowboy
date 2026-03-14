@@ -67,26 +67,27 @@ This repository is a sandbox to explore this concept honestly and practically.
 ```
 ========================================
        CALCULADORA COBOL
-       Soma, Subtracao e Multiplicacao
+       Soma, Subtracao, Multiplicacao e Divisao
 ========================================
 
 Escolha a operacao:
   1 - Soma
   2 - Subtracao
   3 - Multiplicacao
+  4 - Divisao
 
-Digite sua opcao (1, 2 ou 3): 
-1
+Digite sua opcao (1, 2, 3 ou 4): 
+4
 
 Digite o primeiro numero (0-99999): 
-42
+10
 Digite o segundo numero (0-99999): 
-58
+4
 
 ========================================
-RESULTADO DA SOMA
+RESULTADO DA DIVISAO
 ========================================
-00042 + 00058 =        100
+00010 / 00004 =          2.50
 ========================================
 
 Programa encerrado com sucesso!
@@ -171,6 +172,7 @@ cowboy/
     │   ├── criar-programa.prompt.md        ← Prompt: create program
     │   ├── implementar-soma.prompt.md      ← Prompt: implement sum
     │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
+    │   ├── implementar-divisao.prompt.md   ← Prompt: implement division
     │   ├── testar-programa.prompt.md       ← Prompt: test program
     │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
     │   └── manutencao-repositorio.prompt.md ← Prompt: repository maintenance
@@ -200,6 +202,7 @@ Copilot will automatically read `AGENTS.md` and the instructions in `.github/`.
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
+.github/prompts/implementar-divisao.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md
 ```

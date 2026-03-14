@@ -259,12 +259,33 @@ COMPUTE C = (A + B) * (D - E).
 4. **Nomes descritivos** - Use prefixos (WS-, etc) e hífens
 5. **Documente tudo** - Comentários são bem-vindos em COBOL
 
-## Próximas Operações (para expandir)
+## Divisão com Tratamento de Erro
 
-Depois da soma, você pode adicionar:
-- Subtração: `SUBTRACT A FROM B GIVING C`
-- Multiplicação: `MULTIPLY A BY B GIVING C`
-- Divisão: `DIVIDE A BY B GIVING C`
-- Menu para escolher operação
+A divisão exige verificação de divisão por zero — é a operação mais segura de se implementar com cuidado:
+
+```cobol
+      * Variáveis adicionais para divisão
+       01 WS-RESULTADO-DIVISAO     PIC S9(10)V99 VALUE ZEROS.
+       01 WS-RESULTADO-DIV-DISPLAY PIC -(9)9.99.
+
+      ******************************************************************
+      * CALCULAR-DIVISAO - Realiza a operação de divisão
+      *                    Verifica divisão por zero antes de calcular
+      ******************************************************************
+       CALCULAR-DIVISAO.
+           IF WS-NUMERO-2 = ZERO
+               DISPLAY " "
+               DISPLAY "ERRO: Divisao por zero nao e permitida!"
+               DISPLAY " "
+               STOP RUN
+           ELSE
+               DIVIDE WS-NUMERO-1 BY WS-NUMERO-2
+                   GIVING WS-RESULTADO-DIVISAO
+               MOVE WS-RESULTADO-DIVISAO
+                   TO WS-RESULTADO-DIV-DISPLAY
+           END-IF.
+```
+
+> ⚠️ **Nunca divida sem verificar o divisor!** Em COBOL, divisão por zero causa abend (encerramento abrupto do programa).
 
 COBOL: 65+ anos e ainda contando! 🖥️

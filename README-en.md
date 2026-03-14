@@ -67,8 +67,15 @@ This repository is a sandbox to explore this concept honestly and practically.
 ```
 ========================================
        CALCULADORA COBOL
-       Soma de Dois Numeros
+       Soma e Subtracao
 ========================================
+
+Escolha a operacao:
+  1 - Soma
+  2 - Subtracao
+
+Digite sua opcao (1 ou 2): 
+1
 
 Digite o primeiro numero (0-99999): 
 42
@@ -78,7 +85,10 @@ Digite o segundo numero (0-99999):
 ========================================
 RESULTADO DA SOMA
 ========================================
-00042 + 00058 = 000100
+00042 + 00058 =     100
+========================================
+
+Programa encerrado com sucesso!
 ```
 
 > This code was written by GitHub Copilot Agent Mode.  
@@ -162,6 +172,7 @@ cowboy/
     │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
     │   ├── testar-programa.prompt.md       ← Prompt: test program
     │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
+    │   └── manutencao-repositorio.prompt.md ← Prompt: repository maintenance
     ├── ISSUE_TEMPLATE/
     │   ├── bug_report.yml
     │   └── feature_request.yml
@@ -225,5 +236,7 @@ MIT © [cowboy contributors](./LICENSE)
 **Made with 🤠 and GitHub Copilot Agent Mode**
 
 *Not a single line of COBOL was typed manually in this project.*
+
+*"I do not fear computers. I fear the lack of them."* — Isaac Asimov
 
 </div>

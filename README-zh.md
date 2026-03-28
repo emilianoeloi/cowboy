@@ -166,8 +166,10 @@ cowboy/
     ├── skills/
     │   ├── cobol-calculadora/
     │   │   └── SKILL.md                    ← COBOL 技能
-    │   └── readme-manutencao/
-    │       └── SKILL.md                    ← README 维护技能
+    │   ├── readme-manutencao/
+    │   │   └── SKILL.md                    ← README 维护技能
+    │   └── vibe-coding-fundamentals/
+    │       └── SKILL.md                    ← 氛围编程技能 ⭐
     ├── prompts/
     │   ├── criar-programa.prompt.md        ← 提示词：创建程序
     │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
@@ -240,6 +242,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *本项目中没有人工手写过任何一行 COBOL。*
 
-*「科学积累知识的速度远超社会积累智慧的速度。」* — 艾萨克·阿西莫夫
+*「真正的危险不是电脑开始像人类一样思考，而是人类开始像电脑一样思考。」* — 艾萨克·阿西莫夫
 
 </div>

@@ -86,7 +86,8 @@ cowboy/
     │   └── readme-writer.agent.md          ← Agente de documentação
     ├── skills/
     │   ├── cobol-calculadora/SKILL.md      ← Skill de COBOL
-    │   └── readme-manutencao/SKILL.md      ← Skill de READMEs
+    │   ├── readme-manutencao/SKILL.md      ← Skill de READMEs
+    │   └── vibe-coding-fundamentals/SKILL.md ← Skill de Vibe Coding
     └── prompts/
         ├── criar-programa.prompt.md
         ├── implementar-soma.prompt.md
@@ -173,6 +174,7 @@ cobc -fsyntax-only src/CALCULADORA.cbl
 |-------|---------|-----|
 | cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras em COBOL |
 | readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
+| vibe-coding-fundamentals | `.github/skills/vibe-coding-fundamentals/SKILL.md` | Entender Vibe Coding e arquitetura de customizações Copilot |
 
 ---
 

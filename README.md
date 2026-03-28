@@ -164,8 +164,10 @@ cowboy/
     ├── skills/
     │   ├── cobol-calculadora/
     │   │   └── SKILL.md                    ← Skill de COBOL
-    │   └── readme-manutencao/
-    │       └── SKILL.md                    ← Skill de READMEs
+    │   ├── readme-manutencao/
+    │   │   └── SKILL.md                    ← Skill de READMEs
+    │   └── vibe-coding-fundamentals/
+    │       └── SKILL.md                    ← Skill de Vibe Coding ⭐
     ├── prompts/
     │   ├── criar-programa.prompt.md        ← Prompt: criar programa
     │   ├── implementar-soma.prompt.md      ← Prompt: implementar soma
@@ -273,6 +275,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *Nenhuma linha de COBOL foi digitada manualmente neste projeto.*
 
-*"A ciência reúne conhecimento mais rápido do que a sociedade reúne sabedoria."* — Isaac Asimov
+*"O verdadeiro perigo não é que os computadores comecem a pensar como humanos, mas que os humanos comecem a pensar como computadores."* — Isaac Asimov
 
 </div>

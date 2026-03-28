@@ -222,6 +222,7 @@ Quando completar uma tarefa, responda:
 | COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisar qualidade do código |
 | README Writer | `.github/agents/readme-writer.agent.md` | Atualizar READMEs em PT-BR, EN e ZH |
 | COBOL Vibecoder | `.github/agents/cobol-vibecoder.agent.md` | Orquestrar o fluxo completo: Planner → Setup → Code → Review → README |
+| Explore | Agente nativo | Pesquisa rápida do codebase (read-only) |
 
 ---
 
@@ -231,6 +232,7 @@ Quando completar uma tarefa, responda:
 |-------|---------|-----|
 | cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras em COBOL |
 | readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
+| vibe-coding-fundamentals | `.github/skills/vibe-coding-fundamentals/SKILL.md` | Entender Vibe Coding, Agent Mode, e arquitetura de customizações |
 
 ---
 

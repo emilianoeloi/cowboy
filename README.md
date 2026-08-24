@@ -275,6 +275,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *Nenhuma linha de COBOL foi digitada manualmente neste projeto.*
 
-*"O verdadeiro perigo não é que os computadores comecem a pensar como humanos, mas que os humanos comecem a pensar como computadores."* — Isaac Asimov
+*"The real danger is not that computers will begin to think like men, but that men will begin to think like computers."* — Sydney J. Harris (1917–1986)
 
 </div>

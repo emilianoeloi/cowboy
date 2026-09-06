@@ -37,6 +37,8 @@ bloqueia `git commit`/`add`/`merge`/`rebase`. Consulte a fase atual com
 
 - Inicialização de hooks locais: `make init-hooks`
 - Fitness functions de arquitetura: `make fitness` (ou `python3 -m unittest discover -s tests/fitness`)
+- Testes unitários funcionais da calculadora: `make test-unit` (ou `python3 -m unittest discover -s tests/unit`)
+- Bateria completa de testes: `make test`
 - Checagem de sintaxe: `make syntax` (ou `cobc -fsyntax-only src/CALCULADORA.cbl`)
 - Compilação: `make build` (ou `cobc -x -o calculadora src/CALCULADORA.cbl`)
 - Execução: `make run` (ou `./calculadora`)

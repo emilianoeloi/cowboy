@@ -46,9 +46,9 @@
        01 WS-RESULTADO-LOG-DISPLAY PIC -(4)9.9(6).
 
       * Variáveis para cálculo de juros simples
-       01 WS-CAPITAL               PIC 9(7)V99 VALUE ZEROS.
-       01 WS-TAXA-JUROS            PIC 9(3)V99 VALUE ZEROS.
-       01 WS-TEMPO-JUROS           PIC 9(3) VALUE ZEROS.
+       01 WS-CAPITAL               PIC S9(7)V99 VALUE ZEROS.
+       01 WS-TAXA-JUROS            PIC S9(3)V99 VALUE ZEROS.
+       01 WS-TEMPO-JUROS           PIC S9(3) VALUE ZEROS.
        01 WS-VALOR-JUROS           PIC S9(9)V99 VALUE ZEROS.
        01 WS-MONTANTE              PIC S9(9)V99 VALUE ZEROS.
        01 WS-JUROS-DISPLAY         PIC -(9)9.99.

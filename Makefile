@@ -10,7 +10,7 @@ COBC ?= cobc
 BIN ?= calculadora
 SRC ?= src/CALCULADORA.cbl
 
-.PHONY: help init-hooks setup-hooks fitness test syntax build run smoke-test clean check phase-show phase-proposal phase-apply
+.PHONY: help init-hooks setup-hooks fitness test test-unit syntax build run smoke-test clean check phase-show phase-proposal phase-apply
 
 help: ## Exibe a lista de comandos disponíveis
 	@echo "=================================================================="
@@ -46,7 +46,11 @@ fitness: ## Executa as fitness functions de arquitetura (sensores estruturais)
 	@echo "==> Executando Fitness Functions de Arquitetura..."
 	@$(PYTHON) -m unittest discover -s tests/fitness -v
 
-test: fitness ## Alias para fitness functions
+test-unit: build ## Executa a suíte de testes unitários funcionais da calculadora
+	@echo "==> Executando Testes Unitários Funcionais..."
+	@$(PYTHON) -m unittest discover -s tests/unit -v
+
+test: fitness test-unit ## Executa todos os testes (fitness de arquitetura e unitários)
 
 syntax: ## Valida a sintaxe do código COBOL com GnuCOBOL (cobc)
 	@if command -v $(COBC) >/dev/null 2>&1; then \

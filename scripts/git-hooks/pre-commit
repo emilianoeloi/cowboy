@@ -35,8 +35,18 @@ if command -v cobc >/dev/null 2>&1; then
         echo "❌ FALHA: Erro de sintaxe no código COBOL!"
         exit 1
     fi
+
+    # 3. Executar testes unitários funcionais
+    echo "▶ Executando Testes Unitários Funcionais..."
+    if python3 -m unittest discover -s tests/unit; then
+        echo "✔ Testes unitários aprovados com sucesso."
+    else
+        echo ""
+        echo "❌ FALHA: Testes unitários falharam!"
+        exit 1
+    fi
 else
-    echo "ℹ GnuCOBOL (cobc) não encontrado no PATH local; pulando checagem de compilação."
+    echo "ℹ GnuCOBOL (cobc) não encontrado no PATH local; pulando checagem de compilação e testes unitários."
 fi
 
 echo "✔ Todas as verificações de pré-commit passaram!"

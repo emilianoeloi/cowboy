@@ -158,9 +158,10 @@ Quando executar em Agent Mode:
 1. **Leia primeiro** - Entenda o AGENTS.md e este arquivo
 2. **Verifique ambiente** - Confirme que GnuCOBOL está instalado
 3. **Crie o código** - Seguindo a estrutura COBOL
-4. **Compile** - Use `cobc -x -o programa arquivo.cbl`
-5. **Execute** - Use `./programa`
-6. **Corrija** - Se houver erros, analise e corrija
+4. **Valide a Arquitetura** - Use `python3 -m unittest discover -s tests/fitness`
+5. **Compile** - Use `cobc -x -o programa arquivo.cbl`
+6. **Execute** - Use `./programa`
+7. **Corrija** - Se houver erros, analise e corrija
 
 ---
 

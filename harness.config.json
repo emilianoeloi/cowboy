@@ -1,0 +1,50 @@
+{
+  "_comment": "Config lido pelos hooks em scripts/hooks/ e pelo CLI em scripts/harness/phase_cli.py. Nenhum dos dois importa código do projeto — só stdlib — então este arquivo é o único contrato entre eles. Ausência deste arquivo nunca deve travar o agente: todo hook cai em defaults seguros (allow) quando ele não existe ou está corrompido.",
+
+  "phase_state_path": ".harness/change-phase.json",
+
+  "guide_files": [
+    { "path": "AGENTS.md", "label": "AGENTS.md" },
+    { "path": "CLAUDE.md", "label": "CLAUDE.md" },
+    { "path": ".github/copilot-instructions.md", "label": "copilot-instructions" }
+  ],
+
+  "_comment_prefixes": "Deixe planning_write_prefixes e code_prefixes como [] se o projeto não usa gate de fase (ainda bloqueia credenciais/comandos destrutivos, só não bloqueia por fase).",
+  "planning_write_prefixes": [
+    "specs/",
+    "openspec/",
+    "spdd/",
+    ".harness/"
+  ],
+  "code_prefixes": [
+    "src/",
+    "docs/",
+    "tests/"
+  ],
+
+  "blocked_filenames": [
+    ".env",
+    "service_account.json",
+    "google_credentials.json",
+    "gcloud-service-key.json",
+    "id_rsa",
+    "id_ed25519"
+  ],
+  "blocked_filename_suffixes": [".pem", ".p12", ".keystore", ".jks"],
+
+  "blocked_bash_patterns": [
+    { "pattern": "\\bgit\\s+push\\b", "reason": "git push requer confirmação explícita do usuário." },
+    { "pattern": "\\bgit\\s+reset\\s+--hard\\b", "reason": "git reset --hard é destrutivo — peça confirmação explícita." },
+    { "pattern": "\\bgit\\s+clean\\s+-[a-z]*f", "reason": "git clean -f é destrutivo — peça confirmação explícita." },
+    { "pattern": "\\bgit\\s+branch\\s+-[A-Z]", "reason": "deleção forçada de branch requer confirmação explícita." },
+    { "pattern": "\\brm\\s+-[a-z]*r[a-z]*f\\b", "reason": "rm -rf é destrutivo — use deleções explícitas ou git rm." },
+    { "pattern": "(>+|tee)\\s+\\.env\\b", "reason": "escrita em .env é bloqueada — credenciais não devem ser commitadas." }
+  ],
+
+  "proposal_blocked_bash_patterns": [
+    { "pattern": "\\bgit\\s+commit\\b", "label": "git commit" },
+    { "pattern": "\\bgit\\s+add\\b", "label": "git add" },
+    { "pattern": "\\bgit\\s+merge\\b", "label": "git merge" },
+    { "pattern": "\\bgit\\s+rebase\\b", "label": "git rebase" }
+  ]
+}

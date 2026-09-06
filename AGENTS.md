@@ -120,6 +120,9 @@ cowboy/
 ## Comandos Disponíveis
 
 ```bash
+# Executar fitness functions de arquitetura (sensores estruturais)
+python3 -m unittest discover -s tests/fitness
+
 # Compilar o programa
 cobc -x -o calculadora src/CALCULADORA.cbl
 
@@ -131,6 +134,28 @@ cobc -x -debug -o calculadora src/CALCULADORA.cbl
 
 # Verificar sintaxe sem compilar
 cobc -fsyntax-only src/CALCULADORA.cbl
+```
+
+---
+
+## Fase da change
+
+Este projeto usa gate de fase (planejamento vs. implementação). Antes de
+implementar, declare a fase:
+
+```bash
+python3 scripts/harness/phase_cli.py set proposal <nome-da-mudanca>
+# ... planejamento (specs, design, tasks) ...
+python3 scripts/harness/phase_cli.py set apply <nome-da-mudanca>
+# ... agora escrita em código é liberada ...
+```
+
+Enquanto a fase for `proposal`, o hook `pre-tool-write-guard.py` bloqueia
+escrita em `src/` e `docs/` e o hook `pre-tool-bash-guard.py`
+bloqueia `git commit`/`add`/`merge`/`rebase`. Consulte a fase atual com:
+
+```bash
+python3 scripts/harness/phase_cli.py show
 ```
 
 ---

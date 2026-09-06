@@ -54,3 +54,38 @@ calculadora
 *.bak
 core
 core.*
+
+# ----------------------------
+# Harness (estado de fase local)
+# ----------------------------
+.harness/
+
+### Harness — estado local de fase (não commitar)
+.harness/
+*/skills/architecture-*
+*/skills/harness*
+*/skills/install*
+*/skills/dev*
+!harness.config.json
+!docs/HARNESS_QUADRANTE.md
+
+### Python (Scripts/*.py, Scripts/hooks/, Scripts/harness/)
+__pycache__/
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+### OpenSpec
+*openspec/
+openspec
+*openspec*
+*opsx/
+*opsx-*
+
+### OpenSPDD
+spdd/
+*spdd*
+
+### VSCode
+.vscode/

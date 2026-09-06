@@ -1,6 +1,7 @@
       ******************************************************************
       * Programa: CALCULADORA
-      * Descrição: Calculadora de soma, subtracao, multiplicacao, divisao e log
+      * Descrição: Calculadora de soma, subtracao, multiplicacao,
+      *            divisao e logaritmo
       * Autor: Copilot Agent
       * Data: 2026
       ******************************************************************
@@ -21,11 +22,12 @@
        01 WS-NUMERO-1          PIC 9(5) VALUE ZEROS.
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
 
-      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao, 4=Divisao)
+      * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao,
+      *                     4=Divisao, 5=Logaritmo)
        01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
 
       * Resultado com sinal para suportar negativos
-      * PIC S9(10) para comportar multiplicacao (99999 x 99999 = ~10 digitos)
+      * PIC S9(10) para multiplicacao (99999 x 99999 = ~10 digitos)
        01 WS-RESULTADO         PIC S9(10) VALUE ZEROS.
 
       * Resultado formatado para display (exibe sinal negativo)

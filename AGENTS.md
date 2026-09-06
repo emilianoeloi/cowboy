@@ -127,6 +127,13 @@ make init-hooks
 make fitness
 # ou: python3 -m unittest discover -s tests/fitness
 
+# Executar testes unitários funcionais da calculadora
+make test-unit
+# ou: python3 -m unittest discover -s tests/unit
+
+# Executar bateria completa de testes (fitness e unitários)
+make test
+
 # Compilar o programa
 make build
 # ou: cobc -x -o calculadora src/CALCULADORA.cbl

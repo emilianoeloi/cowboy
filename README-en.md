@@ -145,6 +145,9 @@ cobc -x -o calculadora src/CALCULADORA.cbl
 
 # 5. Run it
 ./calculadora
+
+# 6. Run the test suite (unit and fitness)
+make test
 ```
 
 ---
@@ -162,6 +165,9 @@ cowboy/
 ├── CODE_OF_CONDUCT.md                  ← Code of conduct
 ├── src/
 │   └── CALCULADORA.cbl                 ← COBOL program
+├── tests/
+│   ├── fitness/                        ← Architecture fitness functions (sensors)
+│   └── unit/                           ← Functional unit tests of the calculator
 ├── docs/
 │   ├── TUTORIAL.md                     ← Step-by-step tutorial (PT)
 │   └── LEITURA_VOZ_ALTA.md             ← Read-aloud version (PT)

@@ -145,6 +145,9 @@ cobc -x -o calculadora src/CALCULADORA.cbl
 
 # 5. Execute
 ./calculadora
+
+# 6. Execute a bateria de testes (unitários e fitness)
+make test
 ```
 
 ---
@@ -161,6 +164,9 @@ cowboy/
 ├── CODE_OF_CONDUCT.md                  ← Código de conduta
 ├── src/
 │   └── CALCULADORA.cbl                 ← Programa COBOL
+├── tests/
+│   ├── fitness/                        ← Fitness functions de arquitetura (sensores)
+│   └── unit/                           ← Testes unitários funcionais da calculadora
 ├── docs/
 │   ├── TUTORIAL.md                     ← Tutorial passo a passo
 │   └── LEITURA_VOZ_ALTA.md             ← Versão para leitura em voz alta

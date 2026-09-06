@@ -145,6 +145,9 @@ cobc -x -o calculadora src/CALCULADORA.cbl
 
 # 5. 运行
 ./calculadora
+
+# 6. 运行测试套件（单元测试与适应度测试）
+make test
 ```
 
 ---
@@ -163,6 +166,9 @@ cowboy/
 ├── CODE_OF_CONDUCT.md                  ← 行为准则
 ├── src/
 │   └── CALCULADORA.cbl                 ← COBOL 程序
+├── tests/
+│   ├── fitness/                        ← 架构适应度函数（传感器）
+│   └── unit/                           ← 计算器功能单元测试
 ├── docs/
 │   ├── TUTORIAL.md                     ← 分步教程
 │   └── LEITURA_VOZ_ALTA.md             ← 大声阅读版本

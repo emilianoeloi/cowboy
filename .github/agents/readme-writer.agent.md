@@ -1,8 +1,7 @@
 ---
 name: README Writer
 description: Agente especializado em manter os READMEs do projeto sincronizados em PT-BR, EN e ZH. Use após implementações concluídas para atualizar a documentação.
-tools: ['editFiles', 'codebase', 'terminalLastCommand', 'findTestFiles']
-model: gpt-4o
+tools: ['read', 'edit', 'search', 'execute']
 ---
 
 # 📝 README Writer

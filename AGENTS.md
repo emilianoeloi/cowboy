@@ -191,15 +191,32 @@ python3 scripts/harness/phase_cli.py show
 
 ---
 
+## Metodologia SDLC (OpenSpec + OpenSPDD)
+
+O ciclo de vida de desenvolvimento (SDLC) segue estritamente o pipeline de 5 fases:
+
+```
+[0] explorar ──> [1] propose ──> [1] analysis ──> [1] reasons-canvas ──> [2] generate
+(cobol-vibecoder) (cobol-planner) (cobol-planner)   (cobol-planner)      (cobol-coder)
+```
+
+1. **[0] Explorar (`cobol-vibecoder`)**: Exploração de contexto, definição da change em kebab-case e ativação da fase `proposal`.
+2. **[1] Propose (`cobol-planner` / `opsx-propose`)**: Criação da proposta formal em `openspec/changes/<change>/` e validação com `openspec validate <change> --strict`.
+3. **[1] Analysis (`cobol-planner` / `spdd-analysis`)**: Análise técnica e de risco das 4 divisões COBOL em `spdd/analysis/`.
+4. **[1] Reasons-Canvas (`cobol-planner` / `spdd-reasons-canvas`)**: Estruturação do contrato executável de 7 dimensões em `spdd/prompt/`.
+5. **[2] Generate (`cobol-coder` / `spdd-generate`)**: Promoção da fase para `apply`, implementação estrita em `src/CALCULADORA.cbl`, compilação, teste funcional e validação dos 13 testes de arquitetura (`make fitness`).
+
+---
+
 ## Agentes Disponíveis
 
 | Agente | Arquivo | Uso |
 |--------|---------|-----|
-| COBOL Planner | `.github/agents/cobol-planner.agent.md` | Planejar antes de implementar |
-| COBOL Coder | `.github/agents/cobol-coder.agent.md` | Escrever e compilar código COBOL |
-| COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisar qualidade do código |
-| README Writer | `.github/agents/readme-writer.agent.md` | Atualizar READMEs em PT-BR, EN e ZH |
-| COBOL Vibecoder | `.github/agents/cobol-vibecoder.agent.md` | Orquestrar o fluxo completo: Planner → Setup → Code → Review → README |
+| COBOL Vibecoder | `.github/agents/cobol-vibecoder.agent.md` | Orquestrador: [0] Explorar & Conectar Planner → Coder → Reviewer → README |
+| COBOL Planner | `.github/agents/cobol-planner.agent.md` | Planejador SDLC: [1] Propose (opsx), Analysis (spdd) e REASONS Canvas (spdd) |
+| COBOL Coder | `.github/agents/cobol-coder.agent.md` | Implementador: [2] Generate (spdd-generate), compilação e fitness gates |
+| COBOL Reviewer | `.github/agents/cobol-reviewer.agent.md` | Revisor: [3] Revisar qualidade do código COBOL e conformidade do SDLC |
+| README Writer | `.github/agents/readme-writer.agent.md` | Documentador: [4] Sincronizar READMEs em PT-BR, EN e ZH |
 
 ---
 
@@ -207,9 +224,12 @@ python3 scripts/harness/phase_cli.py show
 
 | Skill | Arquivo | Uso |
 |-------|---------|-----|
-| cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras em COBOL |
+| cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras e operações em COBOL |
+| openspec-workflow | `.github/skills/openspec-workflow/SKILL.md` | Governança SDLC com OpenSpec (opsx-propose, tasks, validação) |
+| openspdd-workflow | `.github/skills/openspdd-workflow/SKILL.md` | Metodologia OpenSPDD e REASONS Canvas (analysis, canvas, generate) |
 | readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
-| vibe-coding-fundamentals | `.github/skills/vibe-coding-fundamentals/SKILL.md` | Entender Vibe Coding e arquitetura de customizações Copilot |
+| vibe-coding-fundamentals | `.github/skills/vibe-coding-fundamentals/SKILL.md` | Entender Vibe Coding, Agent Mode e customizações Copilot |
+| architecture-fitness-functions | `.github/skills/architecture-fitness-functions/SKILL.md` | Fitness functions de arquitetura como sensores |
 
 ---
 

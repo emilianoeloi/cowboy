@@ -1,0 +1,43 @@
+# CLAUDE.md
+
+Harness local do Claude Code para este repositório.
+
+## Fonte de verdade do projeto
+
+1. `{{RULEBOOK_FILE}}` (raiz do repo)
+2. Specs / contratos de domínio, se houver
+
+Se houver conflito, siga a ordem acima.
+
+## Regras operacionais
+
+- Toda escrita em filesystem deve respeitar os limites do projeto.
+- Não fazer `git push` sem confirmação explícita do usuário.
+- Não capturar exceções de forma ampla sem justificativa.
+- Não expor secrets em logs, eventos ou artefatos.
+
+## Fase da change
+
+Este projeto usa gate de fase (planejamento vs. implementação). Antes de
+implementar, declare a fase:
+
+```bash
+python3 scripts/harness/phase_cli.py set proposal <nome-da-mudanca>
+# ... planejamento (specs, design, tasks) ...
+python3 scripts/harness/phase_cli.py set apply <nome-da-mudanca>
+# ... agora escrita em código é liberada ...
+```
+
+Enquanto a fase for `proposal`, o hook `pre-tool-write-guard.py` bloqueia
+escrita em `{{CODE_PREFIXES_HUMAN}}` e o hook `pre-tool-bash-guard.py`
+bloqueia `git commit`/`add`/`merge`/`rebase`. Consulte a fase atual com
+`python3 scripts/harness/phase_cli.py show`.
+
+## Quality gates mínimos
+
+{{QUALITY_GATES}}
+
+## Escopo
+
+Este arquivo é um guia básico para o Claude Code. Detalhes de arquitetura,
+segurança e convenções estão em `{{RULEBOOK_FILE}}`.

@@ -1,0 +1,38 @@
+{
+  "_comment": "Fragmento a mesclar em .claude/settings.json (não sobrescrever o arquivo inteiro — o projeto pode já ter outras chaves em 'hooks' ou em outras seções).",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/pre-tool-write-guard.py\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/pre-tool-bash-guard.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

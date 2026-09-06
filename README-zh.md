@@ -67,7 +67,8 @@
 ```
 ========================================
        CALCULADORA COBOL
-   Soma, Subtracao, Multiplicacao, Divisao e Log
+   Soma, Subtracao, Multiplicacao, Divisao,
+   Logaritmo e Juros Simples
 ========================================
 
 Escolha a operacao:
@@ -76,17 +77,26 @@ Escolha a operacao:
   3 - Multiplicacao
   4 - Divisao
   5 - Logaritmo (base 10)
+  6 - Juros Simples
 
-Digite sua opcao (1, 2, 3, 4 ou 5): 
-5
+Digite sua opcao (1, 2, 3, 4, 5 ou 6): 
+6
 
-Digite o numero (deve ser maior que zero): 
-1000
+Digite o capital inicial (ex: 1000.00): 
+1000.00
+Digite a taxa de juros percentual (ex: 5.00): 
+5.00
+Digite o tempo em periodos (ex: 2): 
+2
 
 ========================================
-RESULTADO DO LOGARITMO
+RESULTADO DOS JUROS SIMPLES
 ========================================
-LOG10(01000) =     3.000000
+Capital:  000100000
+Taxa (%): 00500
+Tempo:    002
+Juros:         100.00
+Montante:     1100.00
 ========================================
 
 Programa encerrado com sucesso!
@@ -242,6 +252,6 @@ MIT © [cowboy contributors](./LICENSE)
 
 *本项目中没有人工手写过任何一行 COBOL。*
 
-*「真正的危险不是电脑开始像人类一样思考，而是人类开始像电脑一样思考。」* — 艾萨克·阿西莫夫
+*「任何足够先进的技术都与魔法无异。」* — 艾萨克·阿西莫夫
 
 </div>

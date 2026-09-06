@@ -1,7 +1,7 @@
       ******************************************************************
       * Programa: CALCULADORA
       * Descrição: Calculadora de soma, subtracao, multiplicacao,
-      *            divisao e logaritmo
+      *            divisao, logaritmo e juros simples
       * Autor: Copilot Agent
       * Data: 2026
       ******************************************************************
@@ -23,7 +23,7 @@
        01 WS-NUMERO-2          PIC 9(5) VALUE ZEROS.
 
       * Operação escolhida (1=Soma, 2=Subtracao, 3=Multiplicacao,
-      *                     4=Divisao, 5=Logaritmo)
+      *                     4=Divisao, 5=Logaritmo, 6=Juros)
        01 WS-OPERACAO          PIC 9(1) VALUE ZEROS.
 
       * Resultado com sinal para suportar negativos
@@ -45,6 +45,15 @@
       * Resultado do logaritmo formatado para display
        01 WS-RESULTADO-LOG-DISPLAY PIC -(4)9.9(6).
 
+      * Variáveis para cálculo de juros simples
+       01 WS-CAPITAL               PIC 9(7)V99 VALUE ZEROS.
+       01 WS-TAXA-JUROS            PIC 9(3)V99 VALUE ZEROS.
+       01 WS-TEMPO-JUROS           PIC 9(3) VALUE ZEROS.
+       01 WS-VALOR-JUROS           PIC S9(9)V99 VALUE ZEROS.
+       01 WS-MONTANTE              PIC S9(9)V99 VALUE ZEROS.
+       01 WS-JUROS-DISPLAY         PIC -(9)9.99.
+       01 WS-MONTANTE-DISPLAY      PIC -(9)9.99.
+
       * Linha decorativa
        01 WS-LINHA             PIC X(40) VALUE ALL "=".
 
@@ -58,6 +67,8 @@
            PERFORM EXIBIR-MENU.
            IF WS-OPERACAO = 5
                PERFORM LER-NUMERO-LOG
+           ELSE IF WS-OPERACAO = 6
+               PERFORM LER-DADOS-JUROS
            ELSE
                PERFORM LER-NUMEROS
            END-IF.
@@ -71,6 +82,8 @@
                PERFORM CALCULAR-DIVISAO
            ELSE IF WS-OPERACAO = 5
                PERFORM CALCULAR-LOG
+           ELSE IF WS-OPERACAO = 6
+               PERFORM CALCULAR-JUROS
            ELSE
                DISPLAY "Opcao invalida! Encerrando."
                STOP RUN
@@ -84,7 +97,8 @@
        EXIBIR-CABECALHO.
            DISPLAY WS-LINHA.
            DISPLAY "       CALCULADORA COBOL".
-           DISPLAY "   Soma, Subtracao, Multiplicacao, Divisao e Log".
+           DISPLAY "   Soma, Subtracao, Multiplicacao, Divisao,".
+           DISPLAY "   Logaritmo e Juros Simples".
            DISPLAY WS-LINHA.
 
       ******************************************************************
@@ -98,8 +112,9 @@
            DISPLAY "  3 - Multiplicacao".
            DISPLAY "  4 - Divisao".
            DISPLAY "  5 - Logaritmo (base 10)".
+           DISPLAY "  6 - Juros Simples".
            DISPLAY " ".
-           DISPLAY "Digite sua opcao (1, 2, 3, 4 ou 5): ".
+           DISPLAY "Digite sua opcao (1, 2, 3, 4, 5 ou 6): ".
            ACCEPT WS-OPERACAO.
 
       ******************************************************************
@@ -119,6 +134,18 @@
            DISPLAY " ".
            DISPLAY "Digite o numero (deve ser maior que zero): ".
            ACCEPT WS-NUMERO-1.
+
+      ******************************************************************
+      * LER-DADOS-JUROS - Solicita capital, taxa e tempo
+      ******************************************************************
+       LER-DADOS-JUROS.
+           DISPLAY " ".
+           DISPLAY "Digite o capital inicial (ex: 1000.00): ".
+           ACCEPT WS-CAPITAL.
+           DISPLAY "Digite a taxa de juros percentual (ex: 5.00): ".
+           ACCEPT WS-TAXA-JUROS.
+           DISPLAY "Digite o tempo em periodos (ex: 2): ".
+           ACCEPT WS-TEMPO-JUROS.
 
       ******************************************************************
       * CALCULAR-SOMA - Realiza a operação de soma
@@ -179,6 +206,26 @@
            END-IF.
 
       ******************************************************************
+      * CALCULAR-JUROS - Calcula juros simples e montante acumulado
+      *                  Verifica se os valores sao negativos
+      ******************************************************************
+       CALCULAR-JUROS.
+           IF WS-CAPITAL < ZERO OR WS-TAXA-JUROS < ZERO OR
+              WS-TEMPO-JUROS < ZERO
+               DISPLAY " "
+               DISPLAY "ERRO: Valores negativos nao sao permitidos!"
+               DISPLAY " "
+               STOP RUN
+           ELSE
+               COMPUTE WS-VALOR-JUROS =
+                   (WS-CAPITAL * WS-TAXA-JUROS * WS-TEMPO-JUROS) / 100
+               COMPUTE WS-MONTANTE =
+                   WS-CAPITAL + WS-VALOR-JUROS
+               MOVE WS-VALOR-JUROS TO WS-JUROS-DISPLAY
+               MOVE WS-MONTANTE TO WS-MONTANTE-DISPLAY
+           END-IF.
+
+      ******************************************************************
       * EXIBIR-RESULTADO - Mostra o resultado formatado
       ******************************************************************
        EXIBIR-RESULTADO.
@@ -192,8 +239,10 @@
                DISPLAY "RESULTADO DA MULTIPLICACAO"
            ELSE IF WS-OPERACAO = 4
                DISPLAY "RESULTADO DA DIVISAO"
-           ELSE
+           ELSE IF WS-OPERACAO = 5
                DISPLAY "RESULTADO DO LOGARITMO"
+           ELSE
+               DISPLAY "RESULTADO DOS JUROS SIMPLES"
            END-IF.
            DISPLAY WS-LINHA.
            IF WS-OPERACAO = 1
@@ -208,9 +257,15 @@
            ELSE IF WS-OPERACAO = 4
                DISPLAY WS-NUMERO-1 " / " WS-NUMERO-2 " = "
                    WS-RESULTADO-DIV-DISPLAY
-           ELSE
+           ELSE IF WS-OPERACAO = 5
                DISPLAY "LOG10(" WS-NUMERO-1 ") = "
                    WS-RESULTADO-LOG-DISPLAY
+           ELSE
+               DISPLAY "Capital:  " WS-CAPITAL
+               DISPLAY "Taxa (%): " WS-TAXA-JUROS
+               DISPLAY "Tempo:    " WS-TEMPO-JUROS
+               DISPLAY "Juros:    " WS-JUROS-DISPLAY
+               DISPLAY "Montante: " WS-MONTANTE-DISPLAY
            END-IF.
            DISPLAY WS-LINHA.
            DISPLAY " ".

@@ -1,0 +1,44 @@
+#!/bin/sh
+# ==============================================================================
+# Git Pre-commit Hook - Cowboy (Calculadora COBOL)
+# ==============================================================================
+# Este hook executa os sensores computacionais de arquitetura (fitness functions)
+# antes de permitir a criação do commit local.
+#
+# Se as fitness functions falharem, o commit é imediatamente abortado.
+# ==============================================================================
+
+set -e
+
+echo "--------------------------------------------------------"
+echo "🤠 [Harness Gate] Executando verificações de pré-commit..."
+echo "--------------------------------------------------------"
+
+# 1. Executar fitness functions de arquitetura
+echo "▶ Executando Fitness Functions de Arquitetura..."
+if python3 -m unittest discover -s tests/fitness; then
+    echo "✔ Fitness functions aprovadas com sucesso."
+else
+    echo ""
+    echo "❌ FALHA: Violação de regra de arquitetura detectada!"
+    echo "Corrija as violações acima antes de commitar."
+    exit 1
+fi
+
+# 2. Se o compilador GnuCOBOL estiver instalado, checar sintaxe do COBOL
+if command -v cobc >/dev/null 2>&1; then
+    echo "▶ Validando sintaxe COBOL com cobc..."
+    if cobc -fsyntax-only src/CALCULADORA.cbl; then
+        echo "✔ Sintaxe COBOL válida."
+    else
+        echo ""
+        echo "❌ FALHA: Erro de sintaxe no código COBOL!"
+        exit 1
+    fi
+else
+    echo "ℹ GnuCOBOL (cobc) não encontrado no PATH local; pulando checagem de compilação."
+fi
+
+echo "✔ Todas as verificações de pré-commit passaram!"
+echo "--------------------------------------------------------"
+exit 0

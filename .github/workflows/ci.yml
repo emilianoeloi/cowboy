@@ -1,0 +1,52 @@
+name: CI - Harness Quality Gates
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  quality-gates:
+    name: Architecture & Compilation Quality Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install GnuCOBOL
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gnucobol
+          cobc --version
+
+      - name: Initialize and Validate Hooks
+        run: |
+          make init-hooks
+
+      - name: Run Architecture Fitness Functions
+        run: |
+          make fitness
+
+      - name: Validate COBOL Syntax
+        run: |
+          make syntax
+
+      - name: Compile COBOL Program
+        run: |
+          make build
+
+      - name: Run Automated Smoke Test
+        run: |
+          make smoke-test
+
+      - name: Validate Harness Phase CLI
+        run: |
+          make phase-show

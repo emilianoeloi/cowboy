@@ -35,10 +35,12 @@ bloqueia `git commit`/`add`/`merge`/`rebase`. Consulte a fase atual com
 
 ## Quality gates mínimos
 
-- Fitness functions de arquitetura: `python3 -m unittest discover -s tests/fitness`
-- Checagem de sintaxe: `cobc -fsyntax-only src/CALCULADORA.cbl`
-- Compilação: `cobc -x -o calculadora src/CALCULADORA.cbl`
-- Execução: `./calculadora`
+- Inicialização de hooks locais: `make init-hooks`
+- Fitness functions de arquitetura: `make fitness` (ou `python3 -m unittest discover -s tests/fitness`)
+- Checagem de sintaxe: `make syntax` (ou `cobc -fsyntax-only src/CALCULADORA.cbl`)
+- Compilação: `make build` (ou `cobc -x -o calculadora src/CALCULADORA.cbl`)
+- Execução: `make run` (ou `./calculadora`)
+- Smoke test automatizado: `make smoke-test`
 
 ## Escopo
 

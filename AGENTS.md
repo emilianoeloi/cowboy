@@ -120,20 +120,30 @@ cowboy/
 ## Comandos Disponíveis
 
 ```bash
+# Inicializar hooks locais (Git pre-commit e Claude Code)
+make init-hooks
+
 # Executar fitness functions de arquitetura (sensores estruturais)
-python3 -m unittest discover -s tests/fitness
+make fitness
+# ou: python3 -m unittest discover -s tests/fitness
 
 # Compilar o programa
-cobc -x -o calculadora src/CALCULADORA.cbl
+make build
+# ou: cobc -x -o calculadora src/CALCULADORA.cbl
 
 # Executar o programa
-./calculadora
+make run
+# ou: ./calculadora
+
+# Executar teste automatizado (smoke test)
+make smoke-test
 
 # Compilar com debug
 cobc -x -debug -o calculadora src/CALCULADORA.cbl
 
 # Verificar sintaxe sem compilar
-cobc -fsyntax-only src/CALCULADORA.cbl
+make syntax
+# ou: cobc -fsyntax-only src/CALCULADORA.cbl
 ```
 
 ---

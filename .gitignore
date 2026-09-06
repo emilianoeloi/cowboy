@@ -82,10 +82,12 @@ openspec
 *openspec*
 *opsx/
 *opsx-*
+!/.github/skills/**
 
 ### OpenSPDD
 spdd/
 *spdd*
+!/.github/skills/**
 
 ### VSCode
 .vscode/

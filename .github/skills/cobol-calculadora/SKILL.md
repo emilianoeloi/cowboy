@@ -288,4 +288,16 @@ A divisão exige verificação de divisão por zero — é a operação mais seg
 
 > ⚠️ **Nunca divida sem verificar o divisor!** Em COBOL, divisão por zero causa abend (encerramento abrupto do programa).
 
+---
+
+## 🏛️ Fluxo SDLC com OpenSpec e OpenSPDD
+
+Ao criar novas calculadoras ou adicionar novas operações matemáticas (ex: exponenciação, módulo, raiz quadrada, logaritmo), siga obrigatoriamente o ciclo governado:
+
+1. **[0] Explorar (`cobol-vibecoder`)**: Analisar tipos de dados necessários (inteiro, decimal implícito `V`, sinal `S`), limite de dígitos e impacto no menu.
+2. **[1] Propose (`cobol-planner` / `opsx-propose`)**: Criar a proposta em `openspec/changes/<change>/` e validar com `openspec validate <change> --strict`.
+3. **[1] Analysis (`cobol-planner` / `spdd-analysis`)**: Analisar colunas, novas variáveis de Working-Storage e tratamento de erros aritméticos (`ON SIZE ERROR`, divisão por zero) em `spdd/analysis/`.
+4. **[1] Reasons-Canvas (`cobol-planner` / `spdd-reasons-canvas`)**: Estruturar o contrato executável de 7 dimensões em `spdd/prompt/`.
+5. **[2] Generate (`cobol-coder` / `spdd-generate`)**: Promover fase para `apply`, implementar o código COBOL em `src/CALCULADORA.cbl`, compilar (`cobc -x`), passar nas fitness functions (`make fitness`) e atualizar o checklist do OpenSpec.
+
 COBOL: 65+ anos e ainda contando! 🖥️

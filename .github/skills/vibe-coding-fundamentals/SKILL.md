@@ -154,47 +154,57 @@ description: Descrição clara do que o skill faz
 
 | Skill | Propósito | Referência |
 |-------|-----------|-----------|
-| **cobol-calculadora** | Criar calculadoras em COBOL | [SKILL.md](./../skills/cobol-calculadora/SKILL.md) |
-| **readme-manutencao** | Manter 3 READMEs sincronizados | [SKILL.md](./../skills/readme-manutencao/SKILL.md) |
+| **cobol-calculadora** | Criar calculadoras em COBOL | [.github/skills/cobol-calculadora/SKILL.md](.github/skills/cobol-calculadora/SKILL.md) |
+| **openspec-workflow** | Governança SDLC com OpenSpec (opsx-propose, tasks, validation) | [.github/skills/openspec-workflow/SKILL.md](.github/skills/openspec-workflow/SKILL.md) |
+| **openspdd-workflow** | Engenharia de prompts estruturados via REASONS Canvas (spdd-analysis, spdd-reasons-canvas, spdd-generate) | [.github/skills/openspdd-workflow/SKILL.md](.github/skills/openspdd-workflow/SKILL.md) |
+| **readme-manutencao** | Manter 3 READMEs sincronizados | [.github/skills/readme-manutencao/SKILL.md](.github/skills/readme-manutencao/SKILL.md) |
 | **vibe-coding-fundamentals** | Entender VibeCoding e Agent Mode | Este arquivo |
+| **architecture-fitness-functions** | Fitness functions e sensores determinísticos | [.github/skills/architecture-fitness-functions/SKILL.md](.github/skills/architecture-fitness-functions/SKILL.md) |
 | **agent-customization** | Criar/editar agents e customizações | `copilot-skill:/agent-customization/SKILL.md` |
 
 ### 4️⃣ Agents (Executores Autônomos)
 
 **Pasta:** `.github/agents/`
 
-Agentes são **specialistas** que executam tarefas complexas:
+Agentes são **especialistas** que executam tarefas complexas no SDLC:
 
 #### Tipos de Agentes
 
 ```markdown
-## Análise (Read-Only)
-- COBOL Planner: Planeja sem fazer mudanças
-- COBOL Reviewer: Revisa código, sugere melhorias
-- README Writer: Analisa e organiza docs
+## Orquestração & Exploração
+- COBOL Vibecoder: Conecta o fluxo ponta a ponta, explora e orquestra
 
-## Execução (Code Changes)
-- COBOL Coder: Escreve e compila código
-- Explore: Pesquisa rápida do codebase
+## Planejamento & SDLC (OpenSpec + OpenSPDD)
+- COBOL Planner: Executa opsx-propose, spdd-analysis e spdd-reasons-canvas
 
-## Orquestração
-- COBOL Vibecoder: Conecta todo o workflow
+## Implementação & Geração Mecânica
+- COBOL Coder: Executa spdd-generate, compila e passa pelos fitness gates
+
+## Revisão & Governança
+- COBOL Reviewer: Revisa código COBOL e conformidade do SDLC
+
+## Documentação
+- README Writer: Sincroniza os 3 READMEs (PT-BR, EN, ZH)
 ```
 
-#### Workflow Típico
+#### Workflow do SDLC (OpenSpec + OpenSPDD)
 
 ```mermaid
 graph LR
-    A["🤔 Você Descreve"]
-    B["📋 COBOL Planner<br/>(Planejamento)"]
-    C["🛠️ COBOL Coder<br/>(Implementação)"]
-    D["👀 COBOL Reviewer<br/>(Análise)"]
-    E["📝 README Writer<br/>(Documentação)"]
-    
+    A["[0] Explorar<br/>🤠 Vibecoder"]
+    B["[1] Propose (opsx)<br/>📋 Planner"]
+    C["[1] Analysis (spdd)<br/>📋 Planner"]
+    D["[1] REASONS Canvas<br/>📋 Planner"]
+    E["[2] Generate (spdd)<br/>🛠️ Coder"]
+    F["[3] Review<br/>👀 Reviewer"]
+    G["[4] README<br/>📝 Writer"]
+
     A --> B
     B --> C
     C --> D
     D --> E
+    E --> F
+    F --> G
 ```
 
 #### Como Invocar um Agente
@@ -235,90 +245,82 @@ Prompts são **receitas** para tarefas recorrentes:
 
 ## Stack de Customização do cowboy 🏛️
 
-Este projeto demonstra a stack completa:
+Este projeto demonstra a stack completa governada por OpenSpec + OpenSPDD + Harness:
 
 ```
 copilot-instructions.md
     ↓ Define comportamento global
 AGENTS.md
-    ↓ Regras gerais
+    ↓ Regras gerais & Harness de fases
 ├── Skills/
 │   ├── cobol-calculadora/
+│   ├── openspec-workflow/        ← Spec-Driven Development (opsx-propose, tasks)
+│   ├── openspdd-workflow/        ← REASONS Canvas (analysis, canvas, generate)
 │   ├── readme-manutencao/
 │   └── vibe-coding-fundamentals/
 │       ↓ Conhecimento de domínio
 ├── Agents/
-│   ├── cobol-planner.agent.md
-│   ├── cobol-coder.agent.md
-│   ├── cobol-reviewer.agent.md
-│   └── readme-writer.agent.md
+│   ├── cobol-vibecoder.agent.md  ← [0] Explorar & Orquestrar
+│   ├── cobol-planner.agent.md    ← [1] Propose (opsx) + Analysis & Canvas (spdd)
+│   ├── cobol-coder.agent.md      ← [2] Generate & Implementar (spdd-generate)
+│   ├── cobol-reviewer.agent.md   ← [3] Revisar Código & Rastreabilidade SDLC
+│   └── readme-writer.agent.md    ← [4] Sincronizar Documentação
 │       ↓ Executores especializados
 └── Prompts/
     ├── criar-programa.prompt.md
     ├── implementar-soma.prompt.md
+    ├── sdlc.prompt.md
     └── ...
         ↓ Receitas recorrentes
 ```
 
 ---
 
-## Workflow Prático: Vibe Coding em Ação 🎬
+## Workflow Prático: SDLC com OpenSpec + OpenSPDD 🎬
 
-### Cenário: Implementar Logaritmo na Calculadora
+### Trilha Operacional:
+`[0] explorar -> [1] propose -> [1] analysis -> [1] reasons-canvas -> [2] generate`
 
-#### Passo 1: Planejamento
-
+#### Passo 0: Exploração (`cobol-vibecoder`)
 ```
-Você: @COBOL Planner
-      Como implementar logaritmo (base 10) em COBOL?
-      
-Planner: [Analisa AGENTS.md e copilot-instructions.md]
-         [Responde com plano estruturado]
-```
+Usuário: @COBOL Vibecoder
+         Quero adicionar cálculo de módulo (resto da divisão) na calculadora.
 
-#### Passo 2: Acessar Skill Apropriado
-
-```markdown
-Copilot reconhece:
-- Domínio: COBOL
-- Padrão: Operação matemática
-- Skill sugerido: cobol-calculadora
+Vibecoder: [Explora codebase e requisitos]
+           [Define change: adicionar-modulo]
+           [Aciona o COBOL Planner passando a proposta]
 ```
 
-#### Passo 3: Execução (Agent Mode)
-
+#### Passo 1: Propose & Planejamento (`cobol-planner`)
 ```
-Você: @COBOL Coder
-      Implemente logaritmo na calculadora seguindo:
-      1. Skill: cobol-calculadora
-      2. Padrão de prompt: implementar-log.prompt.md
-      3. Review em: cobol-reviewer.agent.md
-      
-Coder: [Escreve código completo]
-       [Compila e testa]
-       [Retorna resultado]
+Planner: [Executa opsx-propose: cria openspec/changes/adicionar-modulo/]
+         [Executa spdd-analysis: gera spdd/analysis/COB-002-...-[Analysis]-modulo.md]
+         [Executa spdd-reasons-canvas: gera spdd/prompt/COB-002-...-[Code]-modulo.md]
+         [Aciona o COBOL Coder com a rota do canvas]
 ```
 
-#### Passo 4: Revisão
-
+#### Passo 2: Geração & Implementação Mecânica (`cobol-coder`)
 ```
-Você: @COBOL Reviewer
-      Revise o código de logaritmo
-      
-Reviewer: [Analisa boas práticas]
-          [Sugere melhorias]
-          [Aprova ou solicita mudanças]
+Coder: [Promove fase do harness: phase_cli.py set apply adicionar-modulo]
+       [Executa spdd-generate lendo o REASONS Canvas]
+       [Edita src/CALCULADORA.cbl respeitando colunas 8-11 e 12-72]
+       [Compila: cobc -x -o calculadora src/CALCULADORA.cbl]
+       [Roda sensores: make fitness (13/13 OK)]
+       [Atualiza tasks.md e valida com openspec validate --strict]
+       [Aciona COBOL Reviewer]
 ```
 
-#### Passo 5: Documentação
-
+#### Passo 3: Revisão (`cobol-reviewer`)
 ```
-Você: @README Writer
-      Atualize README em PT-BR, EN e ZH
-      com a nova operação de logaritmo
-      
-Writer: [Sincroniza 3 arquivos]
-        [Mantém formatação e estrutura]
+Reviewer: [Analisa boas práticas de COBOL e conformidade do SDLC]
+          [Valida 100% de passagem nos fitness gates]
+          [Aciona README Writer]
+```
+
+#### Passo 4: Documentação (`readme-writer`)
+```
+Writer: [Sincroniza os 3 READMEs (PT-BR, EN e ZH)]
+        [Registra a nova operação de módulo]
 ```
 
 ---

@@ -11,6 +11,45 @@ Este documento usa o quadrante guias×sensores:
 
 As coordenadas são qualitativas (priorização visual), não métrica exata.
 
+## Notas do Harness
+
+- **Data da avaliação**: `<YYYY-MM-DD>`
+- **Escopo**: `<repositório(s) ou área avaliada>`
+- **Confiança**: `<alta|média|baixa>` — `<justificativa curta>`
+
+### Nota de eficácia: `<0–10>` (média das dimensões conhecidas x 2)
+
+| Dimensão | Pontuação (0–5) | Evidência (arquivo-fonte) | Justificativa |
+|---|---|---|---|
+| Clareza das guias | `<n ou desconhecida>` | `<path>` | `<texto objetivo>` |
+| Automação | `<n ou desconhecida>` | `<path>` | `<texto objetivo>` |
+| Cobertura de feedback | `<n ou desconhecida>` | `<path>` | `<texto objetivo>` |
+| Rastreabilidade/evolução | `<n ou desconhecida>` | `<path>` | `<texto objetivo>` |
+| Adoção/baixo atrito | `<n ou desconhecida>` | `<path>` | `<texto objetivo>` |
+
+> Dimensões marcadas como "desconhecida" são excluídas do cálculo da média,
+> não zeradas.
+
+### Nota de complexidade/tamanho: `<0–10>` (`<minimalista|leve|médio|pesado|extremo>`)
+
+- **Evidência**: `<artefatos e gates que geram o custo observado>`
+
+### Limitações e próximos passos
+
+- **Limitações**: `<o que não pôde ser avaliado ou verificado nesta rodada>`
+- **Próximos passos**: `<o que revisar na próxima avaliação>`
+
+## Contexto de Mercado
+
+| Fonte | Data/versão | Prática observada | Evidência | Aplicabilidade | Aderência do repositório |
+|---|---|---|---|---|---|
+| `<fonte real ou "não verificado">` | `<data/versão>` | `<prática>` | `<evidência>` | `<aplicabilidade>` | `<aderência>` |
+
+> Se nenhuma fonte externa verificável foi identificada, use a linha:
+> "Contexto de mercado não verificado nesta avaliação — nenhuma fonte externa
+> identificada." A nota interna (eficácia/complexidade) nunca equivale a uma
+> média estatística do mercado.
+
 ## Diagrama
 
 ```mermaid

@@ -16,16 +16,16 @@ rastreabilidade.
   inspecionados e `make fitness` foi executado; hooks não foram exercitados
   com payloads adversariais nem o workflow remoto foi executado.
 
-### Nota de eficácia: 7,0/10
+### Nota de eficácia: 7,2/10
 
-Média das cinco dimensões conhecidas: `(4 + 4 + 3 + 3 + 3,5) / 5 × 2 = 7,0`.
+Média das cinco dimensões conhecidas: `(4 + 4 + 3 + 3,5 + 3,5) / 5 × 2 = 7,2`.
 
 | Dimensão | Pontuação (0–5) | Evidência (arquivo-fonte) | Justificativa |
 |---|---:|---|---|
-| Clareza das guias | 4 | [AGENTS.md](../AGENTS.md), [copilot-instructions.md](../.github/copilot-instructions.md), [harness.config.json](../harness.config.json) | Convenções, comandos e limites são explícitos; há divergência entre a exigência de declarar fase e o comportamento permissivo quando o estado não existe. |
+| Clareza das guias | 4 | [AGENTS.md](../AGENTS.md), [copilot-instructions.md](../.github/copilot-instructions.md), [harness-quadrant-process/SKILL.md](../.github/skills/harness-quadrant-process/SKILL.md) | Convenções, comandos e o fluxo padronizado de avaliação são explícitos; há divergência entre a exigência de declarar fase e o comportamento permissivo quando o estado não existe. |
 | Automação | 4 | [pre-tool-write-guard.py](../scripts/hooks/pre-tool-write-guard.py), [pre-tool-bash-guard.py](../scripts/hooks/pre-tool-bash-guard.py), [ci.yml](../.github/workflows/ci.yml) | Existem hooks, CLI de fase, fitness functions e CI; parte do gate é fail-open e os testes não cobrem diretamente o comportamento dos hooks. |
 | Cobertura de feedback | 3 | [test_cobol_architecture.py](../tests/fitness/test_cobol_architecture.py), [ci.yml](../.github/workflows/ci.yml) | CI cobre arquitetura, sintaxe, compilação e smoke test; não executa `make test-unit` nem testa as fronteiras de segurança dos hooks. |
-| Rastreabilidade/evolução | 3 | [phase_cli.py](../scripts/harness/phase_cli.py), [cobol-reviewer.agent.md](../.github/agents/cobol-reviewer.agent.md), [ci.yml](../.github/workflows/ci.yml) | Há estado de fase e revisão descrita, mas não foram encontrados testes automatizados dos guardrails; as instruções do agente revisor divergem sobre executar verificações. |
+| Rastreabilidade/evolução | 3,5 | [harness-quadrant-process/SKILL.md](../.github/skills/harness-quadrant-process/SKILL.md), [quadrant-doc-template.md](../.github/skills/harness-quadrant-process/references/quadrant-doc-template.md), [phase_cli.py](../scripts/harness/phase_cli.py) | A skill e seu template padronizam classificação, pontuação e rastreabilidade; ainda faltam testes automatizados dos guardrails e as instruções do agente revisor divergem sobre executar verificações. |
 | Adoção/baixo atrito | 3,5 | [Makefile](../Makefile), [settings.json](../.claude/settings.json), [ci.yml](../.github/workflows/ci.yml) | Há comandos Make e configuração dos hooks; a instalação local depende de `make init-hooks` e GnuCOBOL é necessário para todos os gates funcionais locais. |
 
 ### Nota de complexidade/tamanho: 6/10 (médio)
@@ -68,6 +68,8 @@ quadrantChart
     CLAUDE: [0.86, 0.85]
     Copilot Instructions: [0.84, 0.78]
     Specialized Agents: [0.82, 0.70]
+    Quadrant Process Skill: [0.88, 0.90]
+    Quadrant Report Template: [0.86, 0.82]
     Harness Config: [0.15, 0.84]
     Write Guard: [0.10, 0.36]
     Bash Guard: [0.10, 0.28]
@@ -86,6 +88,8 @@ quadrantChart
 | CLAUDE | [CLAUDE.md](../CLAUDE.md) | Guia Inferencial | Declara fonte de verdade, regras operacionais e gates para o harness Claude. |
 | Copilot Instructions | [copilot-instructions.md](../.github/copilot-instructions.md) | Guia Inferencial | Fornece instruções e exemplos em linguagem natural para o Copilot. |
 | Specialized Agents | [cobol-coder.agent.md](../.github/agents/cobol-coder.agent.md) | Guia Inferencial | Agentes especializados descrevem papéis e procedimentos para planejamento, implementação e documentação. |
+| Quadrant Process Skill | [SKILL.md](../.github/skills/harness-quadrant-process/SKILL.md) | Guia Inferencial | Define um processo de cinco etapas para avaliar e documentar o harness, incluindo critérios de classificação, rubrica e definição de pronto. |
+| Quadrant Report Template | [quadrant-doc-template.md](../.github/skills/harness-quadrant-process/references/quadrant-doc-template.md) | Guia Inferencial | Padroniza a estrutura do relatório e orienta o agente sobre notas, contexto de mercado, diagrama, rastreabilidade e backlog. |
 | Harness Config | [harness.config.json](../harness.config.json) | Guia Computacional | Prefixos, arquivos de guias e padrões de bloqueio alimentam os hooks sem interpretação humana. |
 | Write Guard | [pre-tool-write-guard.py](../scripts/hooks/pre-tool-write-guard.py) | Sensor Computacional | Avalia automaticamente caminhos, nomes de arquivos e fase antes de operações de escrita. |
 | Bash Guard | [pre-tool-bash-guard.py](../scripts/hooks/pre-tool-bash-guard.py) | Sensor Computacional | Compara comandos com padrões de bloqueio e recusa comandos proibidos. |

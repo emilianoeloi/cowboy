@@ -178,7 +178,7 @@ O ecossistema é novo e fragmentado. A comparação abaixo é qualitativa e base
 |---|---|---|---|
 | **APM (Microsoft)** | Gerenciador com manifesto + lockfile + política | Reprodutível, multi-agente, qualquer host git, segurança | Jovem; exige CLI e credencial |
 | **Plugins e marketplaces do Claude Code** | Distribuição nativa (plugin com skills, agents, hooks, comandos, MCP) | Integrado ao Claude Code; diretório oficial da Anthropic | Específico do ecossistema Claude; Copilot exige manifestos adicionais |
-| **Vercel `skills` CLI** (`npx skills add`) | Instalador de skills para dezenas de agentes | Muito simples; ampla compatibilidade | Só skills; sem lockfile/política conforme as fontes; curadoria comunitária |
+| **Vercel `skills` CLI** (`npx skills add`) | Instalador de skills para dezenas de agentes | Muito simples; ampla compatibilidade; `skills-lock.json` | Focado em skills; restauração via `experimental_install` ainda experimental |
 | **OpenSkills** | Carregador universal de skills | Funciona com agentes que leem `AGENTS.md` | Focado em skills |
 | **Ruler / rulesync** | Sincronizam um conjunto de regras para vários agentes | Resolvem o problema de "mesma regra, N formatos" | Não gerenciam versões de dependências |
 | **`AGENTS.md` puro** | Formato aberto de instruções | Zero ferramenta; suportado por vários agentes | Não distribui skills/hooks; sem versionamento |

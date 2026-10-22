@@ -182,7 +182,8 @@ O ecossistema é novo e fragmentado. A comparação abaixo é qualitativa e base
 | **OpenSkills** | Carregador universal de skills | Funciona com agentes que leem `AGENTS.md` | Focado em skills |
 | **Ruler / rulesync** | Sincronizam um conjunto de regras para vários agentes | Resolvem o problema de "mesma regra, N formatos" | Não gerenciam versões de dependências |
 | **`AGENTS.md` puro** | Formato aberto de instruções | Zero ferramenta; suportado por vários agentes | Não distribui skills/hooks; sem versionamento |
-| **Git submodule / cópia manual** | Compartilhar pastas entre repositórios | Sem dependência nova | Sem resolução, hash ou segurança; trabalhoso |
+| **Git submodule** | Compartilhar um repositório em um commit fixo | Revisão exata registrada no repositório consumidor | Não resolve dependências de contexto nem implanta artefatos para agentes |
+| **Cópia manual** | Compartilhar arquivos entre repositórios | Sem gerenciador adicional | Atualização e sincronização manuais; não registra automaticamente a revisão de origem |
 
 ### Quando escolher o quê
 

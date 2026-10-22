@@ -67,7 +67,7 @@ flowchart TD
     I --> GI1[".github/ nativo"]
     P --> GP1[".github/prompts/"]
     G --> GG1[".github/agents/"]
-    K --> GK1[".github/skills/"]
+    K --> GK1[".agents/skills/"]
     H --> GH1[".github/ nativo"]
 ```
 

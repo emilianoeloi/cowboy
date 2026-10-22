@@ -120,8 +120,8 @@ cowboy/
 ## Comandos Disponíveis
 
 ```bash
-# Inicializar hooks locais (Git pre-commit e Claude Code)
-make init-hooks
+# Instalar o harness (hooks, skills, gate de fase) via APM
+make apm-install
 
 # Executar fitness functions de arquitetura (sensores estruturais)
 make fitness
@@ -155,26 +155,10 @@ make syntax
 
 ---
 
-## Fase da change
+## Harness e fase da change
 
-Este projeto usa gate de fase (planejamento vs. implementação). Antes de
-implementar, declare a fase:
-
-```bash
-python3 scripts/harness/phase_cli.py set proposal <nome-da-mudanca>
-# ... planejamento (specs, design, tasks) ...
-python3 scripts/harness/phase_cli.py set apply <nome-da-mudanca>
-# ... agora escrita em código é liberada ...
-```
-
-Enquanto a fase for `proposal`, o hook `pre-tool-write-guard.py` bloqueia
-escrita em `src/` e `docs/` e o hook `pre-tool-bash-guard.py`
-bloqueia `git commit`/`add`/`merge`/`rebase`. Consulte a fase atual com:
-
-```bash
-python3 scripts/harness/phase_cli.py show
-```
-
+Hooks, gate de fase (proposal/apply) e skills de SDLC vêm do pacote APM
+`emilianoeloi/apm` (ver `apm.yml`). Rode `make apm-install` após clonar.
 ---
 
 ## Tipos de Dados Comuns

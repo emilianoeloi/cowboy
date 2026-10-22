@@ -1,0 +1,10 @@
+name: cowboy
+version: "0.1.0"
+description: Calculadora COBOL com harness de desenvolvimento distribuído via APM.
+author: Emiliano Barbosa
+license: MIT
+targets: [claude, copilot]
+dependencies:
+  apm:
+    - emilianoeloi/apm#main
+  mcp: []

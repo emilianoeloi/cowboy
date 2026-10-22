@@ -27,15 +27,6 @@ jobs:
           sudo apt-get install -y gnucobol
           cobc --version
 
-      - name: Install APM
-        run: |
-          pip install apm-cli
-
-      - name: Install harness via APM
-        env:
-          GITHUB_APM_PAT: ${{ secrets.APM_PAT }}
-        run: |
-          make apm-frozen
 
       - name: Run Architecture Fitness Functions
         run: |

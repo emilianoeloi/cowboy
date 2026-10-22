@@ -10,7 +10,7 @@ COBC ?= cobc
 BIN ?= calculadora
 SRC ?= src/CALCULADORA.cbl
 
-.PHONY: help init-hooks setup-hooks fitness test test-unit syntax build run smoke-test clean check phase-show phase-proposal phase-apply
+.PHONY: help apm-install apm-frozen fitness test test-unit syntax build run smoke-test clean check
 
 help: ## Exibe a lista de comandos disponíveis
 	@echo "=================================================================="
@@ -19,28 +19,11 @@ help: ## Exibe a lista de comandos disponíveis
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}'
 	@echo "=================================================================="
 
-init-hooks: setup-hooks ## Inicializa e configura os hooks locais (Git e Claude Code)
+apm-install: ## Instala o harness via APM (apm.yml)
+	@apm install
 
-setup-hooks: ## Instala o hook pre-commit do Git e valida os hooks do Claude Code
-	@echo "==> Configurando Git pre-commit hook..."
-	@mkdir -p .git/hooks
-	@cp scripts/git-hooks/pre-commit .git/hooks/pre-commit
-	@chmod +x .git/hooks/pre-commit
-	@echo "✔ Git hook instalado em .git/hooks/pre-commit"
-	@echo "==> Ajustando permissões dos scripts de hooks e harness..."
-	@chmod +x scripts/hooks/*.py scripts/harness/*.py 2>/dev/null || true
-	@echo "==> Verificando configuração do Claude Code (.claude/settings.json)..."
-	@if [ ! -f .claude/settings.json ]; then \
-		mkdir -p .claude; \
-		printf '{\n  "hooks": {\n    "PreToolUse": [\n      {\n        "matcher": "Write|Edit|NotebookEdit",\n        "hooks": [\n          {\n            "type": "command",\n            "command": "python3 \\"$$CLAUDE_PROJECT_DIR/scripts/hooks/pre-tool-write-guard.py\\"",\n            "timeout": 5\n          }\n        ]\n      },\n      {\n        "matcher": "Bash",\n        "hooks": [\n          {\n            "type": "command",\n            "command": "python3 \\"$$CLAUDE_PROJECT_DIR/scripts/hooks/pre-tool-bash-guard.py\\"",\n            "timeout": 5\n          }\n        ]\n      }\n    ],\n    "SessionStart": [\n      {\n        "hooks": [\n          {\n            "type": "command",\n            "command": "python3 \\"$$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.py\\"",\n            "timeout": 5\n          }\n        ]\n      }\n    ]\n  }\n}\n' > .claude/settings.json; \
-		echo "✔ .claude/settings.json criado com sucesso."; \
-	else \
-		echo "✔ .claude/settings.json já existente."; \
-	fi
-	@echo "==> Testando integridade dos hooks..."
-	@echo '{"source":"make-init-hooks"}' | $(PYTHON) scripts/hooks/session-start.py > /dev/null
-	@echo "✔ Teste de integridade de hooks concluído com sucesso!"
-	@echo "✔ Todos os hooks foram configurados com sucesso."
+apm-frozen: ## Instala o harness a partir do apm.lock.yaml (CI)
+	@apm install --frozen
 
 fitness: ## Executa as fitness functions de arquitetura (sensores estruturais)
 	@echo "==> Executando Fitness Functions de Arquitetura..."
@@ -100,13 +83,3 @@ clean: ## Limpa binários compilados e caches temporários
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
 	@echo "✔ Limpeza concluída."
 
-phase-show: ## Exibe a fase atual da change no harness
-	@$(PYTHON) scripts/harness/phase_cli.py show
-
-phase-proposal: ## Define a fase da change como proposal (Uso: make phase-proposal CHANGE=<nome>)
-	@if [ -z "$(CHANGE)" ]; then echo "Erro: informe CHANGE=<nome>"; exit 1; fi
-	@$(PYTHON) scripts/harness/phase_cli.py set proposal $(CHANGE)
-
-phase-apply: ## Define a fase da change como apply (Uso: make phase-apply CHANGE=<nome>)
-	@if [ -z "$(CHANGE)" ]; then echo "Erro: informe CHANGE=<nome>"; exit 1; fi
-	@$(PYTHON) scripts/harness/phase_cli.py set apply $(CHANGE)

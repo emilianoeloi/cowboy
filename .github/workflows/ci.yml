@@ -27,9 +27,6 @@ jobs:
           sudo apt-get install -y gnucobol
           cobc --version
 
-      - name: Initialize and Validate Hooks
-        run: |
-          make init-hooks
 
       - name: Run Architecture Fitness Functions
         run: |
@@ -46,7 +43,3 @@ jobs:
       - name: Run Automated Smoke Test
         run: |
           make smoke-test
-
-      - name: Validate Harness Phase CLI
-        run: |
-          make phase-show

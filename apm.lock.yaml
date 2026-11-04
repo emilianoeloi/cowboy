@@ -4,8 +4,8 @@ dependencies:
 - repo_url: emilianoeloi/apm
   name: harness
   host: github.com
-  resolved_commit: 54d2f40e0220d312953212525ef3d282cdd80b1e
-  resolved_ref: feat/harness-claude-code
+  resolved_commit: 335a22e9d7c6fda64f1c1adba302a4491c8bdb92
+  resolved_ref: v0.1.0
   version: 0.1.0
   package_type: apm_package
   deployed_files:
@@ -112,11 +112,11 @@ dependencies:
     .github/agents/cobol-planner.agent.md: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
     .github/agents/cobol-reviewer.agent.md: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
     .github/agents/readme-writer.agent.md: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
-    .github/hooks/apm-cowboy.json: sha256:adfc916dceede8913a67af3a72af1481105d47d971c303207f7297c2e850ef11
+    .github/hooks/apm-cowboy.json: sha256:0ddc4f2149e04d34b3c89c87a4160a04a46b59c77778b8bfc36e517e649bb4f3
     .github/prompts/atualizar-readme.prompt.md: sha256:75547c3f90d28c4b251008c7ff44d13d40f758d6c941b879b1a5394b60cda26c
     .github/prompts/implementar-log.prompt.md: sha256:18c57fa7ccd2bc0b316ebb2c9e6d6e04a5ea028356ac1250d793b988f5d02762
     .github/prompts/manutencao-repositorio.prompt.md: sha256:5669e9408ff0cfc7700fbeceb74691e0f37093731d68523f1fc7ef31bfe728b7
-  content_hash: sha256:d3a7f767f48d6ad41ac120ad51c157dbf4a7f08fffc331e66205e021f76f10aa
+  content_hash: sha256:b21919f24bb89cc7e4b096ef8eb184096164d4566bb404f2df942c99d396afda
   declared_license: MIT
 deployments:
 - kind: project-relative
@@ -649,7 +649,7 @@ deployments:
   owners:
   - emilianoeloi/apm
   active_owner: emilianoeloi/apm
-  content_hash: sha256:adfc916dceede8913a67af3a72af1481105d47d971c303207f7297c2e850ef11
+  content_hash: sha256:0ddc4f2149e04d34b3c89c87a4160a04a46b59c77778b8bfc36e517e649bb4f3
 - kind: project-relative
   target: copilot
   value: .github/prompts/atualizar-readme.prompt.md

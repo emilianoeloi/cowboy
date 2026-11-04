@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import json,re,sys;c=json.load(sys.stdin)['tool_input'].get('command','');re.search(r'\\bgit\\s+push\\b',c) and (sys.stderr.write('git push bloqueado pelo harness: peca confirmacao explicita ao usuario.'), sys.exit(2))\"",
+            "command": "python3 -c \"import json,re,sys;c=json.load(sys.stdin)['tool_input'].get('command','');re.search(r'(^|[;&|(]\\s*)git\\s+push\\b',c) and (sys.stderr.write('git push bloqueado pelo harness: peca confirmacao explicita ao usuario.'), sys.exit(2))\"",
             "timeout": 5
           }
         ]

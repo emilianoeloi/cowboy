@@ -87,3 +87,5 @@ apm_modules/
 /.claude/
 /.agents/
 /.github/hooks/apm-*.json
+/.github/agents/
+/.github/prompts/

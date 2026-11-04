@@ -66,11 +66,16 @@ dependencies:
   - .github/agents/cobol-coder.agent.md
   - .github/agents/cobol-planner.agent.md
   - .github/agents/cobol-reviewer.agent.md
+  - .github/agents/cobol-vibecoder.agent.md
   - .github/agents/readme-writer.agent.md
   - .github/hooks/apm-cowboy.json
   - .github/prompts/atualizar-readme.prompt.md
+  - .github/prompts/criar-programa.prompt.md
   - .github/prompts/implementar-log.prompt.md
+  - .github/prompts/implementar-soma.prompt.md
+  - .github/prompts/implementar-subtracao.prompt.md
   - .github/prompts/manutencao-repositorio.prompt.md
+  - .github/prompts/testar-programa.prompt.md
   deployed_file_hashes:
     .agents/skills/architecture-fitness-functions/SKILL.md: sha256:125386113324fd42cb369c00767d961cf8239def9723588b10914f2d42f7f8f2
     .agents/skills/cobol-calculadora/SKILL.md: sha256:2f7dfe1a4129064fd81505a093b1272b133472581b23a66e649f77d4a3377ac0
@@ -111,11 +116,16 @@ dependencies:
     .github/agents/cobol-coder.agent.md: sha256:7f31bf951e6b53703405b731e7cbc40312dc02b45957a0c8e833f37e31c37fef
     .github/agents/cobol-planner.agent.md: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
     .github/agents/cobol-reviewer.agent.md: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
+    .github/agents/cobol-vibecoder.agent.md: sha256:4451e41feb4bc8f6bb05111b32ce121cd9dfa9f72e8120f36f43990c7db75148
     .github/agents/readme-writer.agent.md: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
     .github/hooks/apm-cowboy.json: sha256:0ddc4f2149e04d34b3c89c87a4160a04a46b59c77778b8bfc36e517e649bb4f3
     .github/prompts/atualizar-readme.prompt.md: sha256:75547c3f90d28c4b251008c7ff44d13d40f758d6c941b879b1a5394b60cda26c
+    .github/prompts/criar-programa.prompt.md: sha256:2bec8f21aa7f35c40a5b108c420301bc9485812e694766383fd6f883a34b7f9b
     .github/prompts/implementar-log.prompt.md: sha256:18c57fa7ccd2bc0b316ebb2c9e6d6e04a5ea028356ac1250d793b988f5d02762
+    .github/prompts/implementar-soma.prompt.md: sha256:ee7c6a6e99032f29ff6c88688d0fdac6ddca625a312b8966be6ad6a543935630
+    .github/prompts/implementar-subtracao.prompt.md: sha256:0cf24f05de01afbdf9fb938314a1dada57bd1af86cb0455250857e4056215b68
     .github/prompts/manutencao-repositorio.prompt.md: sha256:5669e9408ff0cfc7700fbeceb74691e0f37093731d68523f1fc7ef31bfe728b7
+    .github/prompts/testar-programa.prompt.md: sha256:441986ee2bed235595d77581d2f25850429be0ad77d73e364295e46937cf1690
   content_hash: sha256:b21919f24bb89cc7e4b096ef8eb184096164d4566bb404f2df942c99d396afda
   declared_license: MIT
 deployments:
@@ -634,6 +644,15 @@ deployments:
   content_hash: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
 - kind: project-relative
   target: copilot
+  value: .github/agents/cobol-vibecoder.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:4451e41feb4bc8f6bb05111b32ce121cd9dfa9f72e8120f36f43990c7db75148
+- kind: project-relative
+  target: copilot
   value: .github/agents/readme-writer.agent.md
   runtime: null
   scope: project
@@ -661,6 +680,15 @@ deployments:
   content_hash: sha256:75547c3f90d28c4b251008c7ff44d13d40f758d6c941b879b1a5394b60cda26c
 - kind: project-relative
   target: copilot
+  value: .github/prompts/criar-programa.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:2bec8f21aa7f35c40a5b108c420301bc9485812e694766383fd6f883a34b7f9b
+- kind: project-relative
+  target: copilot
   value: .github/prompts/implementar-log.prompt.md
   runtime: null
   scope: project
@@ -670,6 +698,24 @@ deployments:
   content_hash: sha256:18c57fa7ccd2bc0b316ebb2c9e6d6e04a5ea028356ac1250d793b988f5d02762
 - kind: project-relative
   target: copilot
+  value: .github/prompts/implementar-soma.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:ee7c6a6e99032f29ff6c88688d0fdac6ddca625a312b8966be6ad6a543935630
+- kind: project-relative
+  target: copilot
+  value: .github/prompts/implementar-subtracao.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:0cf24f05de01afbdf9fb938314a1dada57bd1af86cb0455250857e4056215b68
+- kind: project-relative
+  target: copilot
   value: .github/prompts/manutencao-repositorio.prompt.md
   runtime: null
   scope: project
@@ -677,3 +723,12 @@ deployments:
   - emilianoeloi/apm
   active_owner: emilianoeloi/apm
   content_hash: sha256:5669e9408ff0cfc7700fbeceb74691e0f37093731d68523f1fc7ef31bfe728b7
+- kind: project-relative
+  target: copilot
+  value: .github/prompts/testar-programa.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:441986ee2bed235595d77581d2f25850429be0ad77d73e364295e46937cf1690

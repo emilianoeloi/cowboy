@@ -174,6 +174,7 @@ cowboy/
 └── .github/
     ├── copilot-instructions.md         ← Copilot instructions
     ├── agents/
+    │   ├── cobol-vibecoder.agent.md        ← Orchestrator agent
     │   ├── cobol-planner.agent.md          ← Planner agent
     │   ├── cobol-coder.agent.md            ← Coder agent
     │   ├── cobol-reviewer.agent.md         ← Reviewer agent
@@ -181,15 +182,12 @@ cowboy/
     ├── skills/
     │   ├── cobol-calculadora/
     │   │   └── SKILL.md                    ← COBOL skill
-    │   ├── readme-manutencao/
-    │   │   └── SKILL.md                    ← README maintenance skill
-    │   └── vibe-coding-fundamentals/
-    │       └── SKILL.md                    ← Vibe Coding skill ⭐
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← README maintenance skill
     ├── prompts/
     │   ├── criar-programa.prompt.md        ← Prompt: create program
     │   ├── implementar-soma.prompt.md      ← Prompt: implement sum
     │   ├── implementar-subtracao.prompt.md ← Prompt: implement subtraction
-    │   ├── implementar-divisao.prompt.md   ← Prompt: implement division
     │   ├── implementar-log.prompt.md       ← Prompt: implement logarithm
     │   ├── testar-programa.prompt.md       ← Prompt: test program
     │   ├── atualizar-readme.prompt.md      ← Prompt: update READMEs
@@ -220,7 +218,6 @@ Copilot will automatically read `AGENTS.md` and the instructions in `.github/`.
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
-.github/prompts/implementar-divisao.prompt.md
 .github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md

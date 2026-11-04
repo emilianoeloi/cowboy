@@ -1,0 +1,668 @@
+lockfile_version: '1'
+apm_version: 0.35.0
+dependencies:
+- repo_url: emilianoeloi/apm
+  name: harness
+  host: github.com
+  resolved_commit: 2c239feefa5ae6d18b9574e5a27b671dd6e3dd52
+  resolved_ref: feat/harness-claude-code
+  version: 0.1.0
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/architecture-fitness-functions
+  - .agents/skills/architecture-fitness-functions/SKILL.md
+  - .agents/skills/cobol-calculadora
+  - .agents/skills/cobol-calculadora/SKILL.md
+  - .agents/skills/dev-harness-architect
+  - .agents/skills/dev-harness-architect/SKILL.md
+  - .agents/skills/dev-harness-architect/reference/harness-model.md
+  - .agents/skills/harness
+  - .agents/skills/harness-quadrant-process
+  - .agents/skills/harness-quadrant-process/SKILL.md
+  - .agents/skills/harness-quadrant-process/references/quadrant-doc-template.md
+  - .agents/skills/harness/SKILL.md
+  - .agents/skills/harness/references/dev-harness-kit-export.md
+  - .agents/skills/openspdd-workflow
+  - .agents/skills/openspdd-workflow/SKILL.md
+  - .agents/skills/openspec-workflow
+  - .agents/skills/openspec-workflow/SKILL.md
+  - .agents/skills/readme-manutencao
+  - .agents/skills/readme-manutencao/SKILL.md
+  - .agents/skills/vibe-coding-fundamentals
+  - .agents/skills/vibe-coding-fundamentals/SKILL.md
+  - .claude/agents/cobol-coder.md
+  - .claude/agents/cobol-planner.md
+  - .claude/agents/cobol-reviewer.md
+  - .claude/agents/cobol-vibecoder.md
+  - .claude/agents/readme-writer.md
+  - .claude/commands/atualizar-readme.md
+  - .claude/commands/criar-programa.md
+  - .claude/commands/implementar-log.md
+  - .claude/commands/implementar-soma.md
+  - .claude/commands/implementar-subtracao.md
+  - .claude/commands/manutencao-repositorio.md
+  - .claude/commands/testar-programa.md
+  - .claude/skills/architecture-fitness-functions
+  - .claude/skills/architecture-fitness-functions/SKILL.md
+  - .claude/skills/cobol-calculadora
+  - .claude/skills/cobol-calculadora/SKILL.md
+  - .claude/skills/dev-harness-architect
+  - .claude/skills/dev-harness-architect/SKILL.md
+  - .claude/skills/dev-harness-architect/reference/harness-model.md
+  - .claude/skills/harness
+  - .claude/skills/harness-quadrant-process
+  - .claude/skills/harness-quadrant-process/SKILL.md
+  - .claude/skills/harness-quadrant-process/references/quadrant-doc-template.md
+  - .claude/skills/harness/SKILL.md
+  - .claude/skills/harness/references/dev-harness-kit-export.md
+  - .claude/skills/openspdd-workflow
+  - .claude/skills/openspdd-workflow/SKILL.md
+  - .claude/skills/openspec-workflow
+  - .claude/skills/openspec-workflow/SKILL.md
+  - .claude/skills/readme-manutencao
+  - .claude/skills/readme-manutencao/SKILL.md
+  - .claude/skills/vibe-coding-fundamentals
+  - .claude/skills/vibe-coding-fundamentals/SKILL.md
+  - .github/agents/cobol-coder.agent.md
+  - .github/agents/cobol-planner.agent.md
+  - .github/agents/cobol-reviewer.agent.md
+  - .github/agents/readme-writer.agent.md
+  - .github/prompts/atualizar-readme.prompt.md
+  - .github/prompts/implementar-log.prompt.md
+  - .github/prompts/manutencao-repositorio.prompt.md
+  deployed_file_hashes:
+    .agents/skills/architecture-fitness-functions/SKILL.md: sha256:125386113324fd42cb369c00767d961cf8239def9723588b10914f2d42f7f8f2
+    .agents/skills/cobol-calculadora/SKILL.md: sha256:2f7dfe1a4129064fd81505a093b1272b133472581b23a66e649f77d4a3377ac0
+    .agents/skills/dev-harness-architect/SKILL.md: sha256:780b39fccaad446344f10e23a4a89db58ec12756c099a40b9e89473eab8a38e7
+    .agents/skills/dev-harness-architect/reference/harness-model.md: sha256:dec69e4001f697fd334c8c0237f622163462078d96e6f3718d1f93e62e740b59
+    .agents/skills/harness-quadrant-process/SKILL.md: sha256:f18d14093c38e2386e012d2dec91ae74c6a4080d1b5c583a210ccbe1a9b957aa
+    .agents/skills/harness-quadrant-process/references/quadrant-doc-template.md: sha256:d78f00562fefba88b9ac6b8f25385c7f0b2b828a4098235539095e92ac1f6ae7
+    .agents/skills/harness/SKILL.md: sha256:9d3ad4069e638e900567a44cd643bfda9ab46a44a06fe7df98fbd919d2331b82
+    .agents/skills/harness/references/dev-harness-kit-export.md: sha256:d8fe559cb5293d5348760d431969f556d0fcce4516784516239325889ad1c89c
+    .agents/skills/openspdd-workflow/SKILL.md: sha256:0db4a23d0d6164d272269f4c5c2bef34c73cc8a27adc0739325b811fab3a208a
+    .agents/skills/openspec-workflow/SKILL.md: sha256:7c9f1c63a90ef79b9473f5dfd569a188d982e5daba9c0d449898f207ca1751b4
+    .agents/skills/readme-manutencao/SKILL.md: sha256:5b6d0fff004f47563ee1be2879815bfc69deba07a4d774b05b00acfa411e19b7
+    .agents/skills/vibe-coding-fundamentals/SKILL.md: sha256:33fe00cf4d24033e51e591bcecf58f37223591ac4c6496db26dcfd3bd11ad524
+    .claude/agents/cobol-coder.md: sha256:7f31bf951e6b53703405b731e7cbc40312dc02b45957a0c8e833f37e31c37fef
+    .claude/agents/cobol-planner.md: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
+    .claude/agents/cobol-reviewer.md: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
+    .claude/agents/cobol-vibecoder.md: sha256:4451e41feb4bc8f6bb05111b32ce121cd9dfa9f72e8120f36f43990c7db75148
+    .claude/agents/readme-writer.md: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
+    .claude/commands/atualizar-readme.md: sha256:e1c3bb522d7f6ac2c1c494beac15ea8bd7a3647d6f2ca83ed52efe5ea04aef57
+    .claude/commands/criar-programa.md: sha256:645167eb15c5c9355127be5bdc0fb7b9507384a5358c03f91f8a04e60134a1e1
+    .claude/commands/implementar-log.md: sha256:8455ae929d01cbc9622bcc93acd3ce97583ffa1d8c5ffce09e2ab397e9a1f435
+    .claude/commands/implementar-soma.md: sha256:1568bbbeaf8775fca33f8c4c4720dbb7da5ea759fabac17a05ff4f23b53eab06
+    .claude/commands/implementar-subtracao.md: sha256:2923eac078a8811b79843635ecbf117ad1e87909750148c9ccbdebe957149ec3
+    .claude/commands/manutencao-repositorio.md: sha256:1fb7266086afecbb67422687e6462b8fc46825d6355b9cba382a84b947e5d8aa
+    .claude/commands/testar-programa.md: sha256:b7c2c7735a4158b0c822e04a6857ffb06b232e7deabae39c6ce57b2db0ad6a50
+    .claude/skills/architecture-fitness-functions/SKILL.md: sha256:125386113324fd42cb369c00767d961cf8239def9723588b10914f2d42f7f8f2
+    .claude/skills/cobol-calculadora/SKILL.md: sha256:2f7dfe1a4129064fd81505a093b1272b133472581b23a66e649f77d4a3377ac0
+    .claude/skills/dev-harness-architect/SKILL.md: sha256:780b39fccaad446344f10e23a4a89db58ec12756c099a40b9e89473eab8a38e7
+    .claude/skills/dev-harness-architect/reference/harness-model.md: sha256:dec69e4001f697fd334c8c0237f622163462078d96e6f3718d1f93e62e740b59
+    .claude/skills/harness-quadrant-process/SKILL.md: sha256:f18d14093c38e2386e012d2dec91ae74c6a4080d1b5c583a210ccbe1a9b957aa
+    .claude/skills/harness-quadrant-process/references/quadrant-doc-template.md: sha256:d78f00562fefba88b9ac6b8f25385c7f0b2b828a4098235539095e92ac1f6ae7
+    .claude/skills/harness/SKILL.md: sha256:9d3ad4069e638e900567a44cd643bfda9ab46a44a06fe7df98fbd919d2331b82
+    .claude/skills/harness/references/dev-harness-kit-export.md: sha256:d8fe559cb5293d5348760d431969f556d0fcce4516784516239325889ad1c89c
+    .claude/skills/openspdd-workflow/SKILL.md: sha256:0db4a23d0d6164d272269f4c5c2bef34c73cc8a27adc0739325b811fab3a208a
+    .claude/skills/openspec-workflow/SKILL.md: sha256:7c9f1c63a90ef79b9473f5dfd569a188d982e5daba9c0d449898f207ca1751b4
+    .claude/skills/readme-manutencao/SKILL.md: sha256:5b6d0fff004f47563ee1be2879815bfc69deba07a4d774b05b00acfa411e19b7
+    .claude/skills/vibe-coding-fundamentals/SKILL.md: sha256:33fe00cf4d24033e51e591bcecf58f37223591ac4c6496db26dcfd3bd11ad524
+    .github/agents/cobol-coder.agent.md: sha256:7f31bf951e6b53703405b731e7cbc40312dc02b45957a0c8e833f37e31c37fef
+    .github/agents/cobol-planner.agent.md: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
+    .github/agents/cobol-reviewer.agent.md: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
+    .github/agents/readme-writer.agent.md: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
+    .github/prompts/atualizar-readme.prompt.md: sha256:75547c3f90d28c4b251008c7ff44d13d40f758d6c941b879b1a5394b60cda26c
+    .github/prompts/implementar-log.prompt.md: sha256:18c57fa7ccd2bc0b316ebb2c9e6d6e04a5ea028356ac1250d793b988f5d02762
+    .github/prompts/manutencao-repositorio.prompt.md: sha256:5669e9408ff0cfc7700fbeceb74691e0f37093731d68523f1fc7ef31bfe728b7
+  content_hash: sha256:d3c0c0e79dcc410938008ffb2e782bdb0ce4dddc5244f88e2f378c3ee8856558
+  declared_license: MIT
+deployments:
+- kind: project-relative
+  target: claude
+  value: .claude/agents/cobol-coder.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:7f31bf951e6b53703405b731e7cbc40312dc02b45957a0c8e833f37e31c37fef
+- kind: project-relative
+  target: claude
+  value: .claude/agents/cobol-planner.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
+- kind: project-relative
+  target: claude
+  value: .claude/agents/cobol-reviewer.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
+- kind: project-relative
+  target: claude
+  value: .claude/agents/cobol-vibecoder.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:4451e41feb4bc8f6bb05111b32ce121cd9dfa9f72e8120f36f43990c7db75148
+- kind: project-relative
+  target: claude
+  value: .claude/agents/readme-writer.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
+- kind: project-relative
+  target: claude
+  value: .claude/commands/atualizar-readme.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:e1c3bb522d7f6ac2c1c494beac15ea8bd7a3647d6f2ca83ed52efe5ea04aef57
+- kind: project-relative
+  target: claude
+  value: .claude/commands/criar-programa.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:645167eb15c5c9355127be5bdc0fb7b9507384a5358c03f91f8a04e60134a1e1
+- kind: project-relative
+  target: claude
+  value: .claude/commands/implementar-log.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:8455ae929d01cbc9622bcc93acd3ce97583ffa1d8c5ffce09e2ab397e9a1f435
+- kind: project-relative
+  target: claude
+  value: .claude/commands/implementar-soma.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:1568bbbeaf8775fca33f8c4c4720dbb7da5ea759fabac17a05ff4f23b53eab06
+- kind: project-relative
+  target: claude
+  value: .claude/commands/implementar-subtracao.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:2923eac078a8811b79843635ecbf117ad1e87909750148c9ccbdebe957149ec3
+- kind: project-relative
+  target: claude
+  value: .claude/commands/manutencao-repositorio.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:1fb7266086afecbb67422687e6462b8fc46825d6355b9cba382a84b947e5d8aa
+- kind: project-relative
+  target: claude
+  value: .claude/commands/testar-programa.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:b7c2c7735a4158b0c822e04a6857ffb06b232e7deabae39c6ce57b2db0ad6a50
+- kind: project-relative
+  target: claude
+  value: .claude/skills/architecture-fitness-functions
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/architecture-fitness-functions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:125386113324fd42cb369c00767d961cf8239def9723588b10914f2d42f7f8f2
+- kind: project-relative
+  target: claude
+  value: .claude/skills/cobol-calculadora
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/cobol-calculadora/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:2f7dfe1a4129064fd81505a093b1272b133472581b23a66e649f77d4a3377ac0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/dev-harness-architect
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/dev-harness-architect/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:780b39fccaad446344f10e23a4a89db58ec12756c099a40b9e89473eab8a38e7
+- kind: project-relative
+  target: claude
+  value: .claude/skills/dev-harness-architect/reference/harness-model.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:dec69e4001f697fd334c8c0237f622163462078d96e6f3718d1f93e62e740b59
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness-quadrant-process
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness-quadrant-process/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:f18d14093c38e2386e012d2dec91ae74c6a4080d1b5c583a210ccbe1a9b957aa
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness-quadrant-process/references/quadrant-doc-template.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:d78f00562fefba88b9ac6b8f25385c7f0b2b828a4098235539095e92ac1f6ae7
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:9d3ad4069e638e900567a44cd643bfda9ab46a44a06fe7df98fbd919d2331b82
+- kind: project-relative
+  target: claude
+  value: .claude/skills/harness/references/dev-harness-kit-export.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:d8fe559cb5293d5348760d431969f556d0fcce4516784516239325889ad1c89c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/openspdd-workflow
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/openspdd-workflow/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:0db4a23d0d6164d272269f4c5c2bef34c73cc8a27adc0739325b811fab3a208a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/openspec-workflow
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/openspec-workflow/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:7c9f1c63a90ef79b9473f5dfd569a188d982e5daba9c0d449898f207ca1751b4
+- kind: project-relative
+  target: claude
+  value: .claude/skills/readme-manutencao
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/readme-manutencao/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:5b6d0fff004f47563ee1be2879815bfc69deba07a4d774b05b00acfa411e19b7
+- kind: project-relative
+  target: claude
+  value: .claude/skills/vibe-coding-fundamentals
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/vibe-coding-fundamentals/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:33fe00cf4d24033e51e591bcecf58f37223591ac4c6496db26dcfd3bd11ad524
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/architecture-fitness-functions
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/architecture-fitness-functions/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:125386113324fd42cb369c00767d961cf8239def9723588b10914f2d42f7f8f2
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/cobol-calculadora
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/cobol-calculadora/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:2f7dfe1a4129064fd81505a093b1272b133472581b23a66e649f77d4a3377ac0
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/dev-harness-architect
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/dev-harness-architect/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:780b39fccaad446344f10e23a4a89db58ec12756c099a40b9e89473eab8a38e7
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/dev-harness-architect/reference/harness-model.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:dec69e4001f697fd334c8c0237f622163462078d96e6f3718d1f93e62e740b59
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness-quadrant-process
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness-quadrant-process/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:f18d14093c38e2386e012d2dec91ae74c6a4080d1b5c583a210ccbe1a9b957aa
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness-quadrant-process/references/quadrant-doc-template.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:d78f00562fefba88b9ac6b8f25385c7f0b2b828a4098235539095e92ac1f6ae7
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:9d3ad4069e638e900567a44cd643bfda9ab46a44a06fe7df98fbd919d2331b82
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/harness/references/dev-harness-kit-export.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:d8fe559cb5293d5348760d431969f556d0fcce4516784516239325889ad1c89c
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/openspdd-workflow
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/openspdd-workflow/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:0db4a23d0d6164d272269f4c5c2bef34c73cc8a27adc0739325b811fab3a208a
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/openspec-workflow
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/openspec-workflow/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:7c9f1c63a90ef79b9473f5dfd569a188d982e5daba9c0d449898f207ca1751b4
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/readme-manutencao
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/readme-manutencao/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:5b6d0fff004f47563ee1be2879815bfc69deba07a4d774b05b00acfa411e19b7
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/vibe-coding-fundamentals
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/vibe-coding-fundamentals/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:33fe00cf4d24033e51e591bcecf58f37223591ac4c6496db26dcfd3bd11ad524
+- kind: project-relative
+  target: copilot
+  value: .github/agents/cobol-coder.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:7f31bf951e6b53703405b731e7cbc40312dc02b45957a0c8e833f37e31c37fef
+- kind: project-relative
+  target: copilot
+  value: .github/agents/cobol-planner.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:e1b8a3de6e03cba15f21790a28f211b7232f7f4cfb3baab64837c9a3e1a92c0c
+- kind: project-relative
+  target: copilot
+  value: .github/agents/cobol-reviewer.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:395526fb0028176d2ce9c48e748f45c5a717087a05d6e5714cc9daf8e451bd4e
+- kind: project-relative
+  target: copilot
+  value: .github/agents/readme-writer.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:f4e6ec57d406617a0aac7a04c38ad467a6dd5ab5e84660c2ded99f7d70e4f432
+- kind: project-relative
+  target: copilot
+  value: .github/prompts/atualizar-readme.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:75547c3f90d28c4b251008c7ff44d13d40f758d6c941b879b1a5394b60cda26c
+- kind: project-relative
+  target: copilot
+  value: .github/prompts/implementar-log.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:18c57fa7ccd2bc0b316ebb2c9e6d6e04a5ea028356ac1250d793b988f5d02762
+- kind: project-relative
+  target: copilot
+  value: .github/prompts/manutencao-repositorio.prompt.md
+  runtime: null
+  scope: project
+  owners:
+  - emilianoeloi/apm
+  active_owner: emilianoeloi/apm
+  content_hash: sha256:5669e9408ff0cfc7700fbeceb74691e0f37093731d68523f1fc7ef31bfe728b7

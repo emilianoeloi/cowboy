@@ -152,6 +152,19 @@ make test
 
 ---
 
+## Harness de desenvolvimento (APM) 🧰
+
+O harness (hooks, gate de fase e skills de SDLC) não fica mais neste repositório. Ele é uma dependência versionada declarada em `apm.yml` e distribuída pelo pacote [APM](https://github.com/emilianoeloi/apm).
+
+```bash
+# Instala o harness (requer GITHUB_APM_PAT ou gh auth login)
+make apm-install
+```
+
+Os diretórios `.claude/` e `.github/` gerados pelo APM são saída de build. Para alterar o harness, edite o pacote, não a cópia instalada.
+
+---
+
 ## Estrutura do projeto 📁
 
 ```

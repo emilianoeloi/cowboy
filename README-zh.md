@@ -152,6 +152,19 @@ make test
 
 ---
 
+## 开发工具链（APM）🧰
+
+开发工具链（钩子、阶段门和 SDLC 技能）不再保存在本仓库中。它是通过 `apm.yml` 声明的版本化依赖，由 [APM](https://github.com/emilianoeloi/apm) 包分发。
+
+```bash
+# 安装工具链（需要 GITHUB_APM_PAT 或 gh auth login）
+make apm-install
+```
+
+由 APM 生成的 `.claude/` 和 `.github/` 目录是构建产物。如需修改工具链，请编辑软件包，而不是已安装的副本。
+
+---
+
 ## 项目结构 📁
 
 ```

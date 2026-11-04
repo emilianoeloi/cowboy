@@ -82,3 +82,8 @@ __pycache__/
 
 # APM dependencies
 apm_modules/
+
+# Saida gerada pelo APM (apm install): nao versionar; regenerar com make apm-install
+/.claude/
+/.agents/
+/.github/hooks/apm-*.json

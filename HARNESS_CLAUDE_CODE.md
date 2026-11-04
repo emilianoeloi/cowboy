@@ -50,3 +50,7 @@ Relatório da migração do harness para o Claude Code, com o pacote APM como fo
 7. **Fase 5 (limpeza).** Nada foi removido. Candidatos: `.github/agents/`, `.github/prompts/`, `.github/skills/` (depois da migração), `.github/copilot-instructions.md`, `docs/apm*.md`, `VALIDACAO_APM.md`, `.apm/_pending/` no pacote e `conversa-release` (órfã, sem frontmatter, fora do pacote). Cada item precisa de aprovação.
 8. **Ambiente local.** O `GITHUB_TOKEN` em `~/.zshrc` está inválido e sobrescreve o login do `gh`.
 9. **Limite de commits.** Os arquivos gerados e o lockfile ficaram fora do limite de 400 linhas, como você aprovou. Com a Fase 5, o PR pode passar de 6 commits.
+
+## Decisão de versionamento (revisada)
+
+A saída gerada pelo APM (`.claude/`, `.agents/` e `.github/hooks/apm-*.json`) **não é versionada** no Cowboy. Ela é regenerada com `make apm-install` a partir do lockfile (`apm.lock.yaml`, commitado). Motivo: o harness deve morar só no pacote `emilianoeloi/apm`, e versionar as cópias duplicaria o conteúdo. A decisão anterior (D3) foi revertida. As fontes antigas em `.github/agents/`, `.github/prompts/` e `.github/skills/` continuam no repo até a Fase 5.

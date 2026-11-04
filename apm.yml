@@ -6,5 +6,5 @@ license: MIT
 targets: [claude, copilot]
 dependencies:
   apm:
-    - emilianoeloi/apm#main
+    - emilianoeloi/apm#feat/harness-claude-code
   mcp: []

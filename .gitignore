@@ -73,18 +73,12 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
-### OpenSpec
-*openspec/
-openspec
-*openspec*
-*opsx/
-*opsx-*
-!/.github/skills/**
-
-### OpenSPDD
-spdd/
-*spdd*
-!/.github/skills/**
+### OpenSpec / OpenSPDD (artefatos locais na raiz; skills geradas pelo APM ficam versionadas)
+/openspec/
+/spdd/
 
 ### VSCode
 .vscode/
+
+# APM dependencies
+apm_modules/

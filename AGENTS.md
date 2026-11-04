@@ -86,13 +86,11 @@ cowboy/
     │   └── readme-writer.agent.md          ← Agente de documentação
     ├── skills/
     │   ├── cobol-calculadora/SKILL.md      ← Skill de COBOL
-    │   ├── readme-manutencao/SKILL.md      ← Skill de READMEs
-    │   └── vibe-coding-fundamentals/SKILL.md ← Skill de Vibe Coding
+    │   └── readme-manutencao/SKILL.md      ← Skill de READMEs
     └── prompts/
         ├── criar-programa.prompt.md
         ├── implementar-soma.prompt.md
         ├── implementar-subtracao.prompt.md
-        ├── implementar-divisao.prompt.md
         ├── testar-programa.prompt.md
         ├── atualizar-readme.prompt.md
         └── manutencao-repositorio.prompt.md
@@ -216,11 +214,7 @@ O ciclo de vida de desenvolvimento (SDLC) segue estritamente o pipeline de 5 fas
 | Skill | Arquivo | Uso |
 |-------|---------|-----|
 | cobol-calculadora | `.github/skills/cobol-calculadora/SKILL.md` | Criar calculadoras e operações em COBOL |
-| openspec-workflow | `.github/skills/openspec-workflow/SKILL.md` | Governança SDLC com OpenSpec (opsx-propose, tasks, validação) |
-| openspdd-workflow | `.github/skills/openspdd-workflow/SKILL.md` | Metodologia OpenSPDD e REASONS Canvas (analysis, canvas, generate) |
 | readme-manutencao | `.github/skills/readme-manutencao/SKILL.md` | Manter READMEs sincronizados em 3 idiomas |
-| vibe-coding-fundamentals | `.github/skills/vibe-coding-fundamentals/SKILL.md` | Entender Vibe Coding, Agent Mode e customizações Copilot |
-| architecture-fitness-functions | `.github/skills/architecture-fitness-functions/SKILL.md` | Fitness functions de arquitetura como sensores |
 
 ---
 
@@ -233,7 +227,6 @@ O ciclo de vida de desenvolvimento (SDLC) segue estritamente o pipeline de 5 fas
 | Implementar Subtração | `.github/prompts/implementar-subtracao.prompt.md` | Adicionar operação de subtração |
 | Testar Programa | `.github/prompts/testar-programa.prompt.md` | Compilar e testar o programa |
 | Atualizar README | `.github/prompts/atualizar-readme.prompt.md` | Sincronizar os 3 READMEs |
-| Implementar Divisão | `.github/prompts/implementar-divisao.prompt.md` | Adicionar operação de divisão |
 | Implementar Logaritmo | `.github/prompts/implementar-log.prompt.md` | Adicionar operação de logaritmo (base 10) |
 | Manutenção do Repositório | `.github/prompts/manutencao-repositorio.prompt.md` | Manutenção geral do projeto |
 

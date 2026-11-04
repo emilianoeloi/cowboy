@@ -152,6 +152,19 @@ make test
 
 ---
 
+## Harness de desenvolvimento (APM) 🧰
+
+O harness (hooks, gate de fase e skills de SDLC) não fica mais neste repositório. Ele é uma dependência versionada declarada em `apm.yml` e distribuída pelo pacote [APM](https://github.com/emilianoeloi/apm).
+
+```bash
+# Instala o harness (requer GITHUB_APM_PAT ou gh auth login)
+make apm-install
+```
+
+Os diretórios `.claude/` e `.github/` gerados pelo APM são saída de build. Para alterar o harness, edite o pacote, não a cópia instalada.
+
+---
+
 ## Estrutura do projeto 📁
 
 ```
@@ -173,6 +186,7 @@ cowboy/
 └── .github/
     ├── copilot-instructions.md         ← Instruções do Copilot
     ├── agents/
+    │   ├── cobol-vibecoder.agent.md        ← Agente orquestrador
     │   ├── cobol-planner.agent.md          ← Agente planejador
     │   ├── cobol-coder.agent.md            ← Agente programador
     │   ├── cobol-reviewer.agent.md         ← Agente revisor
@@ -180,15 +194,12 @@ cowboy/
     ├── skills/
     │   ├── cobol-calculadora/
     │   │   └── SKILL.md                    ← Skill de COBOL
-    │   ├── readme-manutencao/
-    │   │   └── SKILL.md                    ← Skill de READMEs
-    │   └── vibe-coding-fundamentals/
-    │       └── SKILL.md                    ← Skill de Vibe Coding ⭐
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← Skill de READMEs
     ├── prompts/
     │   ├── criar-programa.prompt.md        ← Prompt: criar programa
     │   ├── implementar-soma.prompt.md      ← Prompt: implementar soma
     │   ├── implementar-subtracao.prompt.md ← Prompt: implementar subtração
-    │   ├── implementar-divisao.prompt.md   ← Prompt: implementar divisão
     │   ├── implementar-log.prompt.md       ← Prompt: implementar logaritmo
     │   ├── testar-programa.prompt.md       ← Prompt: testar programa
     │   ├── atualizar-readme.prompt.md      ← Prompt: atualizar READMEs
@@ -227,7 +238,6 @@ Execute os prompts na ordem, um por um:
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
-.github/prompts/implementar-divisao.prompt.md
 .github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md

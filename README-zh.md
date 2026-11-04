@@ -152,6 +152,19 @@ make test
 
 ---
 
+## 开发工具链（APM）🧰
+
+开发工具链（钩子、阶段门和 SDLC 技能）不再保存在本仓库中。它是通过 `apm.yml` 声明的版本化依赖，由 [APM](https://github.com/emilianoeloi/apm) 包分发。
+
+```bash
+# 安装工具链（需要 GITHUB_APM_PAT 或 gh auth login）
+make apm-install
+```
+
+由 APM 生成的 `.claude/` 和 `.github/` 目录是构建产物。如需修改工具链，请编辑软件包，而不是已安装的副本。
+
+---
+
 ## 项目结构 📁
 
 ```
@@ -175,6 +188,7 @@ cowboy/
 └── .github/
     ├── copilot-instructions.md         ← Copilot 指令
     ├── agents/
+    │   ├── cobol-vibecoder.agent.md        ← 编排代理
     │   ├── cobol-planner.agent.md          ← 计划代理
     │   ├── cobol-coder.agent.md            ← 编程代理
     │   ├── cobol-reviewer.agent.md         ← 审查代理
@@ -182,15 +196,12 @@ cowboy/
     ├── skills/
     │   ├── cobol-calculadora/
     │   │   └── SKILL.md                    ← COBOL 技能
-    │   ├── readme-manutencao/
-    │   │   └── SKILL.md                    ← README 维护技能
-    │   └── vibe-coding-fundamentals/
-    │       └── SKILL.md                    ← 氛围编程技能 ⭐
+    │   └── readme-manutencao/
+    │       └── SKILL.md                    ← README 维护技能
     ├── prompts/
     │   ├── criar-programa.prompt.md        ← 提示词：创建程序
     │   ├── implementar-soma.prompt.md      ← 提示词：实现加法
     │   ├── implementar-subtracao.prompt.md ← 提示词：实现减法
-    │   ├── implementar-divisao.prompt.md   ← 提示词：实现除法
     │   ├── implementar-log.prompt.md       ← 提示词：实现对数
     │   ├── testar-programa.prompt.md       ← 提示词：测试程序
     │   ├── atualizar-readme.prompt.md      ← 提示词：更新 README
@@ -218,7 +229,6 @@ Copilot 会自动读取 `AGENTS.md` 和 `.github/` 中的指令。
 .github/prompts/criar-programa.prompt.md
 .github/prompts/implementar-soma.prompt.md
 .github/prompts/implementar-subtracao.prompt.md
-.github/prompts/implementar-divisao.prompt.md
 .github/prompts/implementar-log.prompt.md
 .github/prompts/testar-programa.prompt.md
 .github/prompts/atualizar-readme.prompt.md

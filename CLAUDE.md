@@ -1,32 +1,27 @@
 # CLAUDE.md
 
-Harness local do Claude Code para este repositório.
+@AGENTS.md
 
-## Fonte de verdade do projeto
+As instruções do projeto estão em `AGENTS.md`, importado acima. Este arquivo
+traz só o que é específico do Claude Code.
 
-1. `AGENTS.md` (raiz do repo)
-2. Specs / contratos de domínio, se houver
+## Regras operacionais (Claude Code)
 
-Se houver conflito, siga a ordem acima.
-
-## Regras operacionais
-
-- Toda escrita em filesystem deve respeitar os limites do projeto.
 - Não fazer `git push` sem confirmação explícita do usuário.
 - Não capturar exceções de forma ampla sem justificativa.
 - Não expor secrets em logs, eventos ou artefatos.
 
 ## Harness (APM)
 
-O harness (hooks, gate de fase, skills de SDLC) não vive mais neste repositório:
-é distribuído pelo pacote privado `emilianoeloi/apm`, declarado em `apm.yml`.
+Agentes, comandos e skills do Claude Code são gerados pelo APM a partir do
+pacote `emilianoeloi/apm`, declarado em `apm.yml`:
+
+- `.claude/agents/`, `.claude/commands/`, `.claude/skills/`, `.claude/rules/`
+- Não edite esses arquivos nem as cópias em `.github/` à mão: edite o pacote.
 
 ```bash
-apm install   # ou: make apm-install
+make apm-install   # instala o harness (requer gh auth login ou GITHUB_APM_PAT)
 ```
-
-Arquivos em `.claude/` e `.github/` gerados pelo APM são saída de build;
-edite o pacote, não a cópia instalada. Requer `GITHUB_APM_PAT` (ou `gh auth login`).
 
 ## Quality gates mínimos
 
